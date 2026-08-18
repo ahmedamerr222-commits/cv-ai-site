@@ -6,12 +6,18 @@
 <meta name="google-site-verification" content="Ya1VaciR5pdWYhgZMnAOUdOBp29fMfkgaMlRRwtTpa8">
 
 <meta name="description" content="CV AI - أنشئ سيرة ذاتية احترافية مناسبة لتخصصك باستخدام الذكاء الاصطناعي.">
+
 <meta name="robots" content="index, follow">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>CV AI — السيرة الذاتية الاحترافية</title>
 
 <style>
+
+/* =========================
+   GENERAL
+========================= */
 
 *{
 box-sizing:border-box;
@@ -39,6 +45,14 @@ border:0;
 cursor:pointer;
 }
 
+.hidden{
+display:none!important;
+}
+
+/* =========================
+   HEADER
+========================= */
+
 header{
 background:#fff;
 border-bottom:1px solid #e5e7eb;
@@ -49,7 +63,7 @@ align-items:center;
 }
 
 .logo{
-font-size:26px;
+font-size:27px;
 font-weight:900;
 color:#3157d5;
 }
@@ -57,16 +71,20 @@ color:#3157d5;
 .badge{
 background:#eef2ff;
 color:#3157d5;
-padding:8px 13px;
+padding:8px 14px;
 border-radius:30px;
 font-size:13px;
 font-weight:bold;
 }
 
+/* =========================
+   HERO
+========================= */
+
 .hero{
 padding:55px 7%;
 text-align:center;
-background:linear-gradient(135deg,#eef2ff,#ffffff);
+background:linear-gradient(135deg,#eef2ff,#fff);
 }
 
 .hero h1{
@@ -80,8 +98,12 @@ font-size:18px;
 color:#667085;
 }
 
+/* =========================
+   CONTAINER
+========================= */
+
 .container{
-max-width:1150px;
+max-width:1180px;
 margin:35px auto;
 padding:0 18px;
 }
@@ -93,7 +115,7 @@ margin-bottom:25px;
 
 .section-title h2{
 margin:0 0 8px;
-font-size:28px;
+font-size:29px;
 }
 
 .section-title p{
@@ -101,25 +123,21 @@ margin:0;
 color:#667085;
 }
 
-.hidden{
-display:none !important;
-}
-
 /* =========================
-SPECIALTIES
+   SPECIALTIES
 ========================= */
 
 .specialties{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:20px;
+gap:22px;
 }
 
 .specialty{
 background:#fff;
 border:2px solid #e5e7eb;
-border-radius:22px;
-padding:30px 22px;
+border-radius:24px;
+padding:32px 24px;
 text-align:center;
 cursor:pointer;
 transition:.25s;
@@ -129,7 +147,7 @@ user-select:none;
 
 .specialty:hover{
 transform:translateY(-6px);
-box-shadow:0 16px 40px rgba(23,32,51,.12);
+box-shadow:0 18px 45px rgba(23,32,51,.12);
 }
 
 .specialty:active{
@@ -149,14 +167,14 @@ border-color:#059669;
 }
 
 .icon{
-width:78px;
-height:78px;
-border-radius:22px;
+width:82px;
+height:82px;
+border-radius:23px;
 display:flex;
 align-items:center;
 justify-content:center;
 margin:0 auto 18px;
-font-size:38px;
+font-size:40px;
 }
 
 .commerce .icon{
@@ -179,17 +197,56 @@ margin:0 0 10px;
 .specialty p{
 margin:0;
 color:#667085;
-line-height:1.7;
+line-height:1.8;
 }
 
 /* =========================
-TEMPLATES
+   BUTTONS
+========================= */
+
+button{
+background:#3157d5;
+color:#fff;
+padding:13px 21px;
+border-radius:11px;
+font-size:15px;
+font-weight:700;
+transition:.2s;
+}
+
+button:hover{
+opacity:.92;
+transform:translateY(-1px);
+}
+
+.secondary{
+background:#eef2ff;
+color:#3157d5;
+}
+
+.ai{
+background:#111827;
+}
+
+.actions{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+.back-row{
+margin-bottom:20px;
+}
+
+/* =========================
+   TEMPLATE CARDS
 ========================= */
 
 .templates{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:20px;
+gap:22px;
 }
 
 .template-card{
@@ -219,6 +276,14 @@ line-height:1.6;
 min-height:45px;
 }
 
+.template-card button{
+width:100%;
+}
+
+/* =========================
+   TEMPLATE MINI PREVIEWS
+========================= */
+
 .template-preview{
 height:310px;
 border-radius:14px;
@@ -230,42 +295,57 @@ text-align:left;
 box-shadow:inset 0 0 0 1px #e5e7eb;
 }
 
+/* Corporate */
+
 .mini-corporate{
-padding:20px;
+padding:22px;
 }
 
-.mini-corporate .mini-head{
-font-size:20px;
+.mini-corporate .mini-name{
+font-size:21px;
 font-weight:900;
 }
 
 .mini-corporate .mini-role{
 font-size:10px;
-margin-top:5px;
-color:#2563eb;
+margin-top:6px;
 font-weight:bold;
 }
 
-.mini-corporate .mini-line{
-height:4px;
-background:#e5e7eb;
-margin-top:12px;
-width:90%;
-}
-
-.mini-corporate .mini-section{
-font-size:8px;
-font-weight:900;
-margin-top:18px;
+.blue-role{
 color:#2563eb;
 }
 
-.mini-corporate .mini-small{
-height:4px;
-background:#edf0f4;
-margin-top:5px;
-width:85%;
+.purple-role{
+color:#7c3aed;
 }
+
+.green-role{
+color:#059669;
+}
+
+.mini-line{
+height:5px;
+background:#e5e7eb;
+margin-top:13px;
+border-radius:5px;
+}
+
+.mini-section{
+font-size:8px;
+font-weight:900;
+margin-top:20px;
+}
+
+.mini-small{
+height:5px;
+background:#edf0f4;
+margin-top:6px;
+width:88%;
+border-radius:5px;
+}
+
+/* Sidebar */
 
 .mini-sidebar{
 display:grid;
@@ -277,6 +357,14 @@ height:100%;
 padding:18px;
 background:#172033;
 color:#fff;
+}
+
+.mini-sidebar-left.purple{
+background:#171126;
+}
+
+.mini-sidebar-left.green{
+background:#064e3b;
 }
 
 .mini-sidebar-right{
@@ -302,15 +390,27 @@ margin-top:22px;
 
 .mini-side-line{
 height:4px;
-background:#ffffff44;
+background:#ffffff55;
 margin-top:6px;
+border-radius:5px;
 }
 
 .mini-main-title{
 font-size:9px;
 font-weight:900;
-color:#7c3aed;
 margin-bottom:6px;
+}
+
+.mini-main-title.blue{
+color:#2563eb;
+}
+
+.mini-main-title.purple{
+color:#7c3aed;
+}
+
+.mini-main-title.green{
+color:#059669;
 }
 
 .mini-main-line{
@@ -318,10 +418,13 @@ height:5px;
 background:#e5e7eb;
 margin-top:7px;
 width:92%;
+border-radius:5px;
 }
 
+/* Modern */
+
 .mini-modern{
-padding:20px;
+padding:21px;
 }
 
 .mini-modern-top{
@@ -337,85 +440,48 @@ font-weight:900;
 
 .mini-modern-role{
 font-size:9px;
-color:#059669;
 font-weight:bold;
 margin-top:5px;
 }
 
 .mini-modern-box{
-width:45px;
-height:45px;
-border-radius:12px;
-background:#dff7eb;
+width:48px;
+height:48px;
+border-radius:13px;
 }
 
-.mini-modern-line{
-height:5px;
-background:#e5e7eb;
-margin-top:14px;
-width:90%;
+.mini-modern-box.blue{
+background:#dbeafe;
+}
+
+.mini-modern-box.purple{
+background:#ede9fe;
+}
+
+.mini-modern-box.green{
+background:#d1fae5;
 }
 
 .mini-modern-section{
 font-size:8px;
 font-weight:900;
-color:#059669;
-margin-top:19px;
-}
-
-.choose-template{
-width:100%;
-background:#3157d5;
-color:#fff;
-padding:13px 20px;
-border-radius:11px;
-font-size:15px;
-font-weight:700;
-}
-
-.choose-template:hover{
-opacity:.9;
-}
-
-/* =========================
-BUTTONS
-========================= */
-
-button{
-border-radius:11px;
-padding:13px 21px;
-font-size:15px;
-font-weight:700;
-background:#3157d5;
-color:#fff;
-}
-
-button:hover{
-opacity:.92;
-}
-
-.secondary{
-background:#eef2ff;
-color:#3157d5;
-}
-
-.ai{
-background:#111827;
-}
-
-.actions{
-display:flex;
-gap:10px;
-flex-wrap:wrap;
 margin-top:20px;
 }
 
-.back-row{
-margin-bottom:20px;
+.mini-modern-section.blue{
+color:#2563eb;
+}
+
+.mini-modern-section.purple{
+color:#7c3aed;
+}
+
+.mini-modern-section.green{
+color:#059669;
 }
 
 /* =========================
-FORM
+   FORM
 ========================= */
 
 .card{
@@ -477,7 +543,7 @@ box-shadow:0 0 0 3px #3157d51a;
 }
 
 textarea{
-min-height:105px;
+min-height:110px;
 resize:vertical;
 }
 
@@ -494,7 +560,7 @@ line-height:1.6;
 }
 
 /* =========================
-CV COMMON
+   CV COMMON
 ========================= */
 
 .preview{
@@ -511,10 +577,15 @@ background:#fff;
 direction:ltr;
 text-align:left;
 overflow:hidden;
+box-shadow:0 10px 35px rgba(0,0,0,.08);
 }
 
-.cv h1{
-margin:0;
+.cv h1,
+.cv h2,
+.cv h3,
+.cv p{
+margin-left:0;
+margin-right:0;
 }
 
 .cv p{
@@ -528,7 +599,7 @@ margin:25px 0 8px;
 }
 
 /* =========================
-FINANCE 1
+   COMMERCE 1
 ========================= */
 
 .cv.finance-one{
@@ -539,6 +610,7 @@ border-top:10px solid #2563eb;
 .finance-one .cv-name{
 font-size:34px;
 font-weight:900;
+color:#172033;
 }
 
 .finance-one .cv-role{
@@ -561,7 +633,7 @@ padding-bottom:7px;
 }
 
 /* =========================
-FINANCE 2
+   COMMERCE 2
 ========================= */
 
 .cv.finance-two{
@@ -621,7 +693,7 @@ padding-bottom:7px;
 }
 
 /* =========================
-FINANCE 3
+   COMMERCE 3
 ========================= */
 
 .cv.finance-three{
@@ -660,7 +732,7 @@ color:#7c3aed;
 }
 
 /* =========================
-TECH 1
+   TECH 1
 ========================= */
 
 .cv.tech-one{
@@ -701,7 +773,7 @@ padding-bottom:7px;
 }
 
 /* =========================
-TECH 2
+   TECH 2
 ========================= */
 
 .cv.tech-two{
@@ -732,7 +804,7 @@ font-weight:bold;
 margin-top:7px;
 }
 
-.tech-two h3{
+.tech-two .side h3{
 color:#7c3aed;
 }
 
@@ -745,8 +817,12 @@ color:#7c3aed;
 font-weight:bold;
 }
 
+.tech-two .main h3{
+color:#7c3aed;
+}
+
 /* =========================
-TECH 3
+   TECH 3
 ========================= */
 
 .cv.tech-three{
@@ -758,7 +834,7 @@ border-left:9px solid #7c3aed;
 display:flex;
 justify-content:space-between;
 align-items:flex-start;
-gap:25px;
+gap:20px;
 }
 
 .tech-three .name{
@@ -779,6 +855,7 @@ font-family:monospace;
 padding:18px;
 border-radius:12px;
 font-size:12px;
+min-width:105px;
 }
 
 .tech-three h3{
@@ -786,7 +863,7 @@ color:#7c3aed;
 }
 
 /* =========================
-ENGINEERING 1
+   ENGINEERING 1
 ========================= */
 
 .cv.eng-one{
@@ -832,7 +909,7 @@ padding-bottom:7px;
 }
 
 /* =========================
-ENGINEERING 2
+   ENGINEERING 2
 ========================= */
 
 .cv.eng-two{
@@ -863,7 +940,7 @@ font-size:12px;
 margin-top:7px;
 }
 
-.eng-two h3{
+.eng-two .side h3{
 color:#047857;
 }
 
@@ -876,8 +953,12 @@ color:#047857;
 font-weight:bold;
 }
 
+.eng-two .main h3{
+color:#047857;
+}
+
 /* =========================
-ENGINEERING 3
+   ENGINEERING 3
 ========================= */
 
 .cv.eng-three{
@@ -888,9 +969,9 @@ border-top:9px solid #059669;
 .eng-three .top{
 display:flex;
 justify-content:space-between;
-gap:25px;
 border-bottom:2px solid #d1fae5;
 padding-bottom:18px;
+gap:20px;
 }
 
 .eng-three .name{
@@ -916,7 +997,7 @@ color:#047857;
 }
 
 /* =========================
-PRINT A4
+   PRINT A4
 ========================= */
 
 @media print{
@@ -926,8 +1007,11 @@ size:A4;
 margin:0;
 }
 
+html,
 body{
-background:#fff;
+background:#fff!important;
+margin:0!important;
+padding:0!important;
 }
 
 header,
@@ -937,38 +1021,38 @@ header,
 #formSection,
 .preview-title,
 .preview .actions{
-display:none !important;
+display:none!important;
 }
 
 .container{
-margin:0;
-padding:0;
-max-width:none;
+margin:0!important;
+padding:0!important;
+max-width:none!important;
 }
 
 .preview{
-display:block !important;
-margin:0;
+display:block!important;
+margin:0!important;
 }
 
-.card{
-padding:0;
-border:0;
-box-shadow:none;
+.preview .card{
+padding:0!important;
+border:0!important;
+box-shadow:none!important;
 }
 
 .cv{
-width:210mm;
-min-height:297mm;
-max-width:none;
-margin:0;
-box-shadow:none;
+width:210mm!important;
+min-height:297mm!important;
+max-width:none!important;
+margin:0!important;
+box-shadow:none!important;
 }
 
 }
 
 /* =========================
-MOBILE
+   MOBILE
 ========================= */
 
 @media(max-width:850px){
@@ -1024,6 +1108,18 @@ flex-direction:column;
 
 }
 
+/* =========================
+   FALLBACK
+========================= */
+
+.no-js-message{
+padding:20px;
+background:#fff3cd;
+color:#664d03;
+margin:20px;
+border-radius:10px;
+}
+
 </style>
 </head>
 
@@ -1056,7 +1152,7 @@ CV AI
 <div class="container">
 
 <!-- =========================
-SPECIALTY
+     SPECIALTY
 ========================= -->
 
 <section id="specialtySection">
@@ -1075,7 +1171,10 @@ SPECIALTY
 
 <div class="specialties">
 
-<div class="specialty commerce" data-specialty="commerce">
+<div
+class="specialty commerce"
+onclick="selectSpecialty('commerce')"
+>
 
 <div class="icon">
 🧾
@@ -1091,8 +1190,10 @@ SPECIALTY
 
 </div>
 
-
-<div class="specialty computers" data-specialty="computers">
+<div
+class="specialty computers"
+onclick="selectSpecialty('computers')"
+>
 
 <div class="icon">
 💻
@@ -1108,8 +1209,10 @@ SPECIALTY
 
 </div>
 
-
-<div class="specialty engineering" data-specialty="engineering">
+<div
+class="specialty engineering"
+onclick="selectSpecialty('engineering')"
+>
 
 <div class="icon">
 ⚙️
@@ -1131,14 +1234,21 @@ SPECIALTY
 
 
 <!-- =========================
-TEMPLATES
+     TEMPLATES
 ========================= -->
 
-<section id="templateSection" class="hidden">
+<section
+id="templateSection"
+class="hidden"
+>
 
 <div class="back-row">
 
-<button type="button" class="secondary" id="backButton">
+<button
+type="button"
+onclick="backToSpecialties()"
+class="secondary"
+>
 ← رجوع
 </button>
 
@@ -1151,21 +1261,28 @@ TEMPLATES
 </h2>
 
 <p>
-اختر التصميم المناسب لك
+كل قالب له تصميم مختلف.
 </p>
 
 </div>
 
-<div class="templates" id="templates"></div>
+<div
+class="templates"
+id="templates"
+>
+</div>
 
 </section>
 
 
 <!-- =========================
-FORM
+     FORM
 ========================= -->
 
-<section id="formSection" class="hidden">
+<section
+id="formSection"
+class="hidden"
+>
 
 <div class="card">
 
@@ -1177,82 +1294,81 @@ FORM
 بيانات الـCV
 </h2>
 
-<div id="selectedTemplate" class="selected"></div>
+<div
+id="selectedTemplate"
+class="selected"
+>
+</div>
 
 </div>
 
-<button type="button" class="secondary" id="changeTemplate">
+<button
+type="button"
+class="secondary"
+onclick="changeTemplate()"
+>
 تغيير القالب
 </button>
 
 </div>
 
-
 <div class="grid">
 
 <div>
 
-<label for="name">
+<label>
 الاسم
 </label>
 
 <input
 id="name"
-type="text"
 placeholder="Ahmed Mohamed"
 >
 
 </div>
 
-
 <div>
 
-<label for="role">
+<label>
 الوظيفة المستهدفة
 </label>
 
 <input
 id="role"
-type="text"
 placeholder="Accountant"
 >
 
 </div>
 
-
 <div>
 
-<label for="email">
+<label>
 البريد الإلكتروني
 </label>
 
 <input
 id="email"
-type="email"
 placeholder="example@email.com"
 >
 
 </div>
 
-
 <div>
 
-<label for="phone">
+<label>
 رقم الهاتف
 </label>
 
 <input
 id="phone"
-type="text"
 placeholder="+20 ..."
 >
 
 </div>
 
-
 <div class="full">
 
-<label for="experience">
+<label>
 الخبرة العملية
 </label>
 
@@ -1263,10 +1379,9 @@ placeholder="اكتب خبرتك العملية بالتفصيل"
 
 </div>
 
-
 <div>
 
-<label for="education">
+<label>
 التعليم
 </label>
 
@@ -1277,10 +1392,9 @@ placeholder="كلية التجارة — جامعة ..."
 
 </div>
 
-
 <div>
 
-<label for="skills">
+<label>
 المهارات
 </label>
 
@@ -1291,10 +1405,9 @@ placeholder="Excel, Accounting, ERP"
 
 </div>
 
-
 <div>
 
-<label for="languages">
+<label>
 اللغات
 </label>
 
@@ -1305,10 +1418,9 @@ placeholder="Arabic — Native&#10;English — Very Good"
 
 </div>
 
-
 <div class="full">
 
-<label for="summary">
+<label>
 نبذة عنك
 </label>
 
@@ -1321,23 +1433,32 @@ placeholder="اكتب نبذة بسيطة عن نفسك"
 
 </div>
 
-
 <div class="actions">
 
-<button type="button" class="ai" id="aiButton">
+<button
+type="button"
+class="ai"
+onclick="improveAI()"
+>
 ✨ تحسين بالـAI
 </button>
 
-<button type="button" id="generateButton">
+<button
+type="button"
+onclick="generateCV()"
+>
 إنشاء الـCV
 </button>
 
-<button type="button" class="secondary" id="clearButton">
+<button
+type="button"
+class="secondary"
+onclick="clearForm()"
+>
 مسح
 </button>
 
 </div>
-
 
 <div
 class="status"
@@ -1350,7 +1471,7 @@ id="status"
 
 
 <!-- =========================
-PREVIEW
+     PREVIEW
 ========================= -->
 
 <section
@@ -1364,13 +1485,16 @@ id="preview"
 معاينة الـCV
 </h2>
 
-<div id="cv" class="cv"></div>
+<div
+id="cv"
+class="cv"
+></div>
 
 <div class="actions">
 
 <button
 type="button"
-id="printButton"
+onclick="window.print()"
 >
 📄 طباعة / حفظ PDF
 </button>
@@ -1386,23 +1510,29 @@ id="printButton"
 
 <script>
 
-/*
-========================================
-CV AI
-نسخة مصححة
-========================================
-
-مهم:
-هذا هو رابط الـWorker الموجود في النسخة الأصلية.
-لن يتم تغييره.
-*/
+/* =====================================================
+   CV AI
+   IMPORTANT:
+   Worker URL is kept exactly as provided.
+===================================================== */
 
 const WORKER_URL =
-'https://bold-cell-b95f.ahmedamerr222.workers.dev/';
+'https://cv-ai-site-2.ahmedamerr222.workers.dev/';
 
 
 /* =========================
-HELPERS
+   STATE
+========================= */
+
+let selectedSpecialty = '';
+
+let selectedTemplate = '';
+
+let aiCV = '';
+
+
+/* =========================
+   HELPERS
 ========================= */
 
 function $(id){
@@ -1416,20 +1546,24 @@ function value(id){
 
 const element = $(id);
 
-return element
-? element.value.trim()
-: '';
+if(!element){
+
+return '';
+
+}
+
+return element.value.trim();
 
 }
 
 
 function escapeHTML(text){
 
-return String(text).replace(
+return String(text || '').replace(
 /[&<>"']/g,
 function(char){
 
-return {
+const map = {
 
 '&':'&amp;',
 '<':'&lt;',
@@ -1437,7 +1571,9 @@ return {
 '"':'&quot;',
 "'":'&#039;'
 
-}[char];
+};
+
+return map[char];
 
 }
 );
@@ -1447,48 +1583,44 @@ return {
 
 function nl(text){
 
-return escapeHTML(String(text))
+return escapeHTML(text)
 .replace(/\r?\n/g,'<br>');
 
 }
 
 
-function safeText(text){
+function skillsHTML(text){
 
-return text || '';
+if(!text){
+
+return 'Add your professional skills here.';
+
+}
+
+return escapeHTML(text)
+.replace(/\r?\n/g,'<br>')
+.replace(/,/g,' • ');
 
 }
 
 
 /* =========================
-STATE
-========================= */
-
-let selectedSpecialty = '';
-let selectedTemplate = '';
-let aiCV = '';
-
-
-/* =========================
-SPECIALTY NAMES
+   SPECIALTY NAMES
 ========================= */
 
 const specialtyNames = {
 
-commerce:
-'تجارة ومحاسبة',
+commerce:'تجارة ومحاسبة',
 
-computers:
-'حاسبات وتكنولوجيا',
+computers:'حاسبات وتكنولوجيا',
 
-engineering:
-'هندسة'
+engineering:'هندسة'
 
 };
 
 
 /* =========================
-TEMPLATES DATA
+   TEMPLATES
 ========================= */
 
 const templates = {
@@ -1498,24 +1630,21 @@ commerce:[
 {
 id:'finance-one',
 name:'Corporate Accounting',
-description:'تصميم Corporate Finance احترافي للمحاسبين والشركات.',
-preview:'corporate',
+description:'Corporate Finance / Accounting — مناسب للمحاسبين والشركات.',
 cv:'finance-one'
 },
 
 {
 id:'finance-two',
 name:'Finance Executive',
-description:'تصميم Finance Executive جانبي مناسب للمالية والبنوك.',
-preview:'sidebar',
+description:'تصميم احترافي جانبي مناسب للمالية والبنوك.',
 cv:'finance-two'
 },
 
 {
 id:'finance-three',
 name:'Finance Modern',
-description:'تصميم Finance Modern عصري للوظائف المالية والإدارية.',
-preview:'modern',
+description:'تصميم عصري للوظائف المالية والإدارية.',
 cv:'finance-three'
 }
 
@@ -1525,25 +1654,22 @@ computers:[
 
 {
 id:'tech-one',
-name:'Modern Tech',
-description:'تصميم Modern Tech للمبرمجين وIT والوظائف التقنية.',
-preview:'corporate',
+name:'Modern Developer',
+description:'Modern Tech — مناسب للمبرمجين وIT.',
 cv:'tech-one'
 },
 
 {
 id:'tech-two',
-name:'Developer Sidebar',
-description:'تصميم Developer حديث للمطورين والذكاء الاصطناعي.',
-preview:'sidebar',
+name:'Software Engineer',
+description:'تصميم تقني حديث للمطورين والـAI.',
 cv:'tech-two'
 },
 
 {
 id:'tech-three',
-name:'Tech Code',
-description:'تصميم Tech Code بطابع برمجي مميز.',
-preview:'modern',
+name:'Developer Code',
+description:'تصميم بطابع برمجي مميز.',
 cv:'tech-three'
 }
 
@@ -1552,111 +1678,4 @@ cv:'tech-three'
 engineering:[
 
 {
-id:'eng-one',
-name:'Engineering Professional',
-description:'تصميم Engineering Professional للمهندسين والشركات.',
-preview:'corporate',
-cv:'eng-one'
-},
-
-{
-id:'eng-two',
-name:'Engineering Sidebar',
-description:'تصميم منظم للمشاريع والخبرات الهندسية.',
-preview:'sidebar',
-cv:'eng-two'
-},
-
-{
-id:'eng-three',
-name:'Engineering Modern',
-description:'تصميم Engineering Modern عصري للمهندسين.',
-preview:'modern',
-cv:'eng-three'
-}
-
-]
-
-};
-
-
-/* =========================
-SHOW SECTION
-========================= */
-
-function showSection(section){
-
-const sections = [
-
-'specialtySection',
-'templateSection',
-'formSection'
-
-];
-
-sections.forEach(function(id){
-
-const element = $(id);
-
-if(element){
-
-element.classList.add('hidden');
-
-}
-
-});
-
-if(section){
-
-const target = $(section);
-
-if(target){
-
-target.classList.remove('hidden');
-
-}
-
-}
-
-}
-
-
-/* =========================
-SELECT SPECIALTY
-========================= */
-
-function selectSpecialty(type){
-
-if(!templates[type]){
-
-console.error(
-'Unknown specialty:',
-type
-);
-
-return;
-
-}
-
-selectedSpecialty = type;
-
-selectedTemplate = '';
-aiCV = '';
-
-showSection('templateSection');
-
-$('templateHeading').textContent =
-'قوالب ' + specialtyNames[type];
-
-renderTemplates(type);
-
-window.scrollTo({
-top:0,
-behavior:'smooth'
-});
-
-}
-
-
-/* =========================
-RENDER TEMPLAT
+id:'eng-on
