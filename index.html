@@ -2,14 +2,20 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
+
 <meta name="google-site-verification" content="Ya1VaciR5pdWYhgZMnAOUdOBp29fMfkgaMlRRwtTpa8">
+
 <meta name="description" content="CV AI - أنشئ سيرة ذاتية احترافية مناسبة لتخصصك باستخدام الذكاء الاصطناعي.">
 <meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>CV AI — السيرة الذاتية الاحترافية</title>
 
 <style>
-*{box-sizing:border-box}
+
+*{
+box-sizing:border-box;
+}
 
 body{
 margin:0;
@@ -156,7 +162,7 @@ line-height:1.7;
 }
 
 /* =========================
-   TEMPLATE CARDS
+   TEMPLATES
 ========================= */
 
 .templates{
@@ -203,7 +209,7 @@ text-align:left;
 box-shadow:inset 0 0 0 1px #e5e7eb;
 }
 
-/* Mini CV 1 */
+/* Corporate preview */
 
 .mini-corporate{
 padding:20px;
@@ -242,7 +248,7 @@ margin-top:5px;
 width:85%;
 }
 
-/* Mini CV 2 */
+/* Sidebar preview */
 
 .mini-sidebar{
 display:grid;
@@ -297,7 +303,7 @@ margin-top:7px;
 width:92%;
 }
 
-/* Mini CV 3 */
+/* Modern preview */
 
 .mini-modern{
 padding:20px;
@@ -355,6 +361,7 @@ font-weight:700;
 cursor:pointer;
 background:#3157d5;
 color:#fff;
+font-family:inherit;
 }
 
 button:hover{
@@ -488,6 +495,7 @@ margin:0;
 .cv p{
 font-size:13px;
 line-height:1.65;
+white-space:normal;
 }
 
 .cv h3{
@@ -496,7 +504,7 @@ margin:25px 0 8px;
 }
 
 /* =========================
-   COMMERCE TEMPLATE 1
+   FINANCE 1
 ========================= */
 
 .cv.finance-one{
@@ -530,7 +538,7 @@ padding-bottom:7px;
 }
 
 /* =========================
-   COMMERCE TEMPLATE 2
+   FINANCE 2
 ========================= */
 
 .cv.finance-two{
@@ -590,7 +598,7 @@ padding-bottom:7px;
 }
 
 /* =========================
-   COMMERCE TEMPLATE 3
+   FINANCE 3
 ========================= */
 
 .cv.finance-three{
@@ -629,7 +637,7 @@ color:#7c3aed;
 }
 
 /* =========================
-   TECH TEMPLATE 1
+   TECH 1
 ========================= */
 
 .cv.tech-one{
@@ -670,12 +678,13 @@ padding-bottom:7px;
 }
 
 /* =========================
-   TECH TEMPLATE 2
+   TECH 2
 ========================= */
 
 .cv.tech-two{
 display:grid;
 grid-template-columns:27% 73%;
+min-height:297mm;
 }
 
 .tech-two .side{
@@ -714,7 +723,7 @@ font-weight:bold;
 }
 
 /* =========================
-   TECH TEMPLATE 3
+   TECH 3
 ========================= */
 
 .cv.tech-three{
@@ -726,6 +735,7 @@ border-left:9px solid #7c3aed;
 display:flex;
 justify-content:space-between;
 align-items:flex-start;
+gap:20px;
 }
 
 .tech-three .name{
@@ -746,6 +756,7 @@ font-family:monospace;
 padding:18px;
 border-radius:12px;
 font-size:12px;
+min-width:90px;
 }
 
 .tech-three h3{
@@ -753,7 +764,7 @@ color:#7c3aed;
 }
 
 /* =========================
-   ENGINEERING TEMPLATE 1
+   ENGINEERING 1
 ========================= */
 
 .cv.eng-one{
@@ -799,12 +810,13 @@ padding-bottom:7px;
 }
 
 /* =========================
-   ENGINEERING TEMPLATE 2
+   ENGINEERING 2
 ========================= */
 
 .cv.eng-two{
 display:grid;
 grid-template-columns:32% 68%;
+min-height:297mm;
 }
 
 .eng-two .side{
@@ -843,7 +855,7 @@ font-weight:bold;
 }
 
 /* =========================
-   ENGINEERING TEMPLATE 3
+   ENGINEERING 3
 ========================= */
 
 .cv.eng-three{
@@ -856,6 +868,7 @@ display:flex;
 justify-content:space-between;
 border-bottom:2px solid #d1fae5;
 padding-bottom:18px;
+gap:20px;
 }
 
 .eng-three .name{
@@ -874,6 +887,7 @@ width:80px;
 height:80px;
 background:#d1fae5;
 border-radius:12px;
+flex-shrink:0;
 }
 
 .eng-three h3{
@@ -881,7 +895,7 @@ color:#047857;
 }
 
 /* =========================
-   PRINT
+   PRINT A4
 ========================= */
 
 @media print{
@@ -891,8 +905,11 @@ size:A4;
 margin:0;
 }
 
+html,
 body{
-background:#fff;
+background:#fff!important;
+margin:0!important;
+padding:0!important;
 }
 
 header,
@@ -906,28 +923,31 @@ display:none!important;
 }
 
 .container{
-margin:0;
-padding:0;
-max-width:none;
+margin:0!important;
+padding:0!important;
+max-width:none!important;
 }
 
 .preview{
 display:block!important;
-margin:0;
+margin:0!important;
+padding:0!important;
 }
 
-.card{
-padding:0;
-border:0;
-box-shadow:none;
+.preview .card{
+padding:0!important;
+border:0!important;
+box-shadow:none!important;
+border-radius:0!important;
 }
 
 .cv{
-width:210mm;
-min-height:297mm;
-max-width:none;
-margin:0;
-box-shadow:none;
+width:210mm!important;
+min-height:297mm!important;
+max-width:none!important;
+margin:0!important;
+box-shadow:none!important;
+border-radius:0!important;
 }
 
 }
@@ -978,7 +998,51 @@ display:block;
 .tech-two .side,
 .eng-two .side{
 border-right:0;
-border-bottom:5px solid;
+border-bottom:5px solid #7c3aed;
+}
+
+.eng-two .side{
+border-bottom-color:#059669;
+}
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:450px){
+
+header{
+padding:14px 18px;
+}
+
+.logo{
+font-size:23px;
+}
+
+.hero{
+padding:40px 18px;
+}
+
+.hero h1{
+font-size:26px;
+}
+
+.hero p{
+font-size:15px;
+}
+
+.container{
+padding:0 12px;
+}
+
+.card{
+padding:18px;
+}
+
+.template-preview{
+height:280px;
 }
 
 }
@@ -989,70 +1053,138 @@ border-bottom:5px solid;
 <body>
 
 <header>
+
 <div class="logo">CV AI</div>
-<div class="badge">الإصدار الاحترافي</div>
+
+<div class="badge">
+الإصدار الاحترافي
+</div>
+
 </header>
 
 <section class="hero">
-<h1>أنشئ CV احترافي مناسب لتخصصك</h1>
-<p>اختر تخصصك ثم اختر التصميم الذي يناسبك.</p>
+
+<h1>
+أنشئ CV احترافي مناسب لتخصصك
+</h1>
+
+<p>
+اختر تخصصك ثم اختر التصميم الذي يناسبك.
+</p>
+
 </section>
 
 <div class="container">
 
-<!-- التخصص -->
+<!-- =========================
+     SPECIALTY
+========================= -->
 
 <section id="specialtySection">
 
 <div class="section-title">
-<h2>اختر تخصصك</h2>
-<p>اختار المجال المناسب لك</p>
+
+<h2>
+اختر تخصصك
+</h2>
+
+<p>
+اختار المجال المناسب لك
+</p>
+
 </div>
 
 <div class="specialties">
 
 <div class="specialty commerce" data-specialty="commerce">
-<div class="icon">🧾</div>
-<h3>تجارة ومحاسبة</h3>
-<p>قوالب للمحاسبة والمالية والبنوك وإدارة الأعمال.</p>
+
+<div class="icon">
+🧾
 </div>
+
+<h3>
+تجارة ومحاسبة
+</h3>
+
+<p>
+قوالب للمحاسبة والمالية والبنوك وإدارة الأعمال.
+</p>
+
+</div>
+
 
 <div class="specialty computers" data-specialty="computers">
-<div class="icon">💻</div>
-<h3>حاسبات وتكنولوجيا</h3>
-<p>قوالب للبرمجة وIT والذكاء الاصطناعي والبيانات.</p>
+
+<div class="icon">
+💻
 </div>
 
+<h3>
+حاسبات وتكنولوجيا
+</h3>
+
+<p>
+قوالب للبرمجة وIT والذكاء الاصطناعي والبيانات.
+</p>
+
+</div>
+
+
 <div class="specialty engineering" data-specialty="engineering">
-<div class="icon">⚙️</div>
-<h3>هندسة</h3>
-<p>قوالب للمهندسين والمشاريع والتخصصات الهندسية.</p>
+
+<div class="icon">
+⚙️
+</div>
+
+<h3>
+هندسة
+</h3>
+
+<p>
+قوالب للمهندسين والمشاريع والتخصصات الهندسية.
+</p>
+
 </div>
 
 </div>
 
 </section>
 
-<!-- القوالب -->
+
+<!-- =========================
+     TEMPLATES
+========================= -->
 
 <section id="templateSection" class="hidden">
 
 <div class="back-row">
-<button class="secondary" id="backButton">
+
+<button type="button" class="secondary" id="backButton">
 ← رجوع
 </button>
+
 </div>
 
 <div class="section-title">
-<h2 id="templateHeading">اختر قالب الـCV</h2>
-<p>كل قالب له تصميم مختلف.</p>
+
+<h2 id="templateHeading">
+اختر قالب الـCV
+</h2>
+
+<p>
+كل قالب له تصميم مختلف.
+</p>
+
 </div>
 
 <div class="templates" id="templates"></div>
 
 </section>
 
-<!-- النموذج -->
+
+<!-- =========================
+     FORM
+========================= -->
 
 <section id="formSection" class="hidden">
 
@@ -1061,80 +1193,172 @@ border-bottom:5px solid;
 <div class="form-top">
 
 <div>
-<h2>بيانات الـCV</h2>
+
+<h2>
+بيانات الـCV
+</h2>
+
 <div id="selectedTemplate" class="selected"></div>
+
 </div>
 
-<button class="secondary" id="changeTemplate">
+<button type="button" class="secondary" id="changeTemplate">
 تغيير القالب
 </button>
 
 </div>
 
+
 <div class="grid">
 
 <div>
-<label>الاسم</label>
-<input id="name" placeholder="Ahmed Mohamed">
+
+<label for="name">
+الاسم
+</label>
+
+<input
+id="name"
+type="text"
+placeholder="Ahmed Mohamed"
+>
+
 </div>
 
-<div>
-<label>الوظيفة المستهدفة</label>
-<input id="role" placeholder="Accountant">
-</div>
 
 <div>
-<label>البريد الإلكتروني</label>
-<input id="email" placeholder="example@email.com">
+
+<label for="role">
+الوظيفة المستهدفة
+</label>
+
+<input
+id="role"
+type="text"
+placeholder="Accountant"
+>
+
 </div>
 
+
 <div>
-<label>رقم الهاتف</label>
-<input id="phone" placeholder="+20 ...">
+
+<label for="email">
+البريد الإلكتروني
+</label>
+
+<input
+id="email"
+type="email"
+placeholder="example@email.com"
+>
+
 </div>
+
+
+<div>
+
+<label for="phone">
+رقم الهاتف
+</label>
+
+<input
+id="phone"
+type="text"
+placeholder="+20 ..."
+>
+
+</div>
+
 
 <div class="full">
-<label>الخبرة العملية</label>
-<textarea id="experience" placeholder="اكتب خبرتك العملية بالتفصيل"></textarea>
+
+<label for="experience">
+الخبرة العملية
+</label>
+
+<textarea
+id="experience"
+placeholder="اكتب خبرتك العملية بالتفصيل"
+></textarea>
+
 </div>
 
-<div>
-<label>التعليم</label>
-<textarea id="education" placeholder="كلية التجارة — جامعة ..."></textarea>
-</div>
 
 <div>
-<label>المهارات</label>
-<textarea id="skills" placeholder="Excel, Accounting, ERP"></textarea>
+
+<label for="education">
+التعليم
+</label>
+
+<textarea
+id="education"
+placeholder="كلية التجارة — جامعة ..."
+></textarea>
+
 </div>
 
+
 <div>
-<label>اللغات</label>
-<textarea id="languages" placeholder="Arabic — Native&#10;English — Very Good"></textarea>
+
+<label for="skills">
+المهارات
+</label>
+
+<textarea
+id="skills"
+placeholder="Excel, Accounting, ERP"
+></textarea>
+
 </div>
+
+
+<div>
+
+<label for="languages">
+اللغات
+</label>
+
+<textarea
+id="languages"
+placeholder="Arabic — Native&#10;English — Very Good"
+></textarea>
+
+</div>
+
 
 <div class="full">
-<label>نبذة عنك</label>
-<textarea id="summary" placeholder="اكتب نبذة بسيطة عن نفسك"></textarea>
+
+<label for="summary">
+نبذة عنك
+</label>
+
+<textarea
+id="summary"
+placeholder="اكتب نبذة بسيطة عن نفسك"
+></textarea>
+
 </div>
 
 </div>
+
 
 <div class="actions">
 
-<button class="ai" id="aiButton">
+<button type="button" class="ai" id="aiButton">
 ✨ تحسين بالـAI
 </button>
 
-<button id="generateButton">
+<button type="button" id="generateButton">
 إنشاء الـCV
 </button>
 
-<button class="secondary" id="clearButton">
+<button type="button" class="secondary" id="clearButton">
 مسح
 </button>
 
 </div>
+
 
 <div class="status" id="status"></div>
 
@@ -1142,19 +1366,24 @@ border-bottom:5px solid;
 
 </section>
 
-<!-- المعاينة -->
+
+<!-- =========================
+     PREVIEW
+========================= -->
 
 <section class="preview" id="preview">
 
 <div class="card">
 
-<h2 class="preview-title">معاينة الـCV</h2>
+<h2 class="preview-title">
+معاينة الـCV
+</h2>
 
 <div id="cv" class="cv"></div>
 
 <div class="actions">
 
-<button id="printButton">
+<button type="button" id="printButton">
 📄 طباعة / حفظ PDF
 </button>
 
@@ -1166,24 +1395,68 @@ border-bottom:5px solid;
 
 </div>
 
+
 <script>
 
-const $ = id => document.getElementById(id);
+/* =====================================================
+   CORE
+===================================================== */
 
-const v = id => $(id).value.trim();
+(function(){
+
+'use strict';
+
+
+function $(id){
+return document.getElementById(id);
+}
+
+
+function value(id){
+
+const element = $(id);
+
+if(!element){
+return '';
+}
+
+return element.value.trim();
+
+}
+
 
 let selectedSpecialty = '';
 let selectedTemplate = '';
 let aiCV = '';
 
+
+/* =====================================================
+   WORKER
+   لا يتم تغيير الرابط
+===================================================== */
+
 const WORKER_URL =
 'https://bold-cell-b95f.ahmedamerr222.workers.dev/';
 
+
+/* =====================================================
+   SPECIALTY NAMES
+===================================================== */
+
 const specialtyNames = {
+
 commerce:'تجارة ومحاسبة',
+
 computers:'حاسبات وتكنولوجيا',
+
 engineering:'هندسة'
+
 };
+
+
+/* =====================================================
+   TEMPLATES
+===================================================== */
 
 const templates = {
 
@@ -1215,6 +1488,7 @@ cv:'finance-three'
 
 ],
 
+
 computers:[
 
 {
@@ -1242,6 +1516,7 @@ cv:'tech-three'
 }
 
 ],
+
 
 engineering:[
 
@@ -1273,142 +1548,51 @@ cv:'eng-three'
 
 };
 
-function selectSpecialty(type){
 
-selectedSpecialty = type;
+/* =====================================================
+   HTML ESCAPE
+===================================================== */
 
-$('specialtySection').classList.add('hidden');
-$('templateSection').classList.remove('hidden');
+function escapeHTML(text){
 
-$('templateHeading').textContent =
-'قوالب ' + specialtyNames[type];
+return String(text || '').replace(
+/[&<>"']/g,
+function(char){
 
-renderTemplates(type);
+const map = {
 
-window.scrollTo({
-top:0,
-behavior:'smooth'
-});
+'&':'&amp;',
+'<':'&lt;',
+'>':'&gt;',
+'"':'&quot;',
+"'":'&#039;'
+
+};
+
+return map[char];
+
+}
+);
 
 }
 
-function renderTemplates(type){
 
-const box = $('templates');
+/* =====================================================
+   TEXT TO HTML
+===================================================== */
 
-box.innerHTML = '';
+function textHTML(text){
 
-templates[type].forEach(template => {
-
-const card = document.createElement('div');
-
-card.className = 'template-card';
-
-let previewHTML = '';
-
-if(template.preview === 'corporate'){
-
-previewHTML = `
-
-<div class="template-preview mini-corporate">
-
-<div class="mini-head">Ahmed Mohamed</div>
-
-<div class="mini-role">PROFESSIONAL</div>
-
-<div class="mini-line"></div>
-
-<div class="mini-section">PROFILE</div>
-<div class="mini-small"></div>
-<div class="mini-small" style="width:75%"></div>
-
-<div class="mini-section">EXPERIENCE</div>
-<div class="mini-small"></div>
-<div class="mini-small" style="width:80%"></div>
-
-<div class="mini-section">EDUCATION</div>
-<div class="mini-small" style="width:70%"></div>
-
-</div>
-
-`;
+return escapeHTML(text)
+.replace(/\r\n/g,'\n')
+.replace(/\r/g,'\n')
+.replace(/\n/g,'<br>');
 
 }
 
-if(template.preview === 'sidebar'){
 
-previewHTML = `
+/* =====================================================
+   SELECT SPECIALTY
+===================================================== */
 
-<div class="template-preview mini-sidebar">
-
-<div class="mini-sidebar-left">
-
-<div class="mini-sidebar-name">Ahmed</div>
-
-<div class="mini-sidebar-role">PROFESSIONAL</div>
-
-<div class="mini-side-title">CONTACT</div>
-<div class="mini-side-line"></div>
-<div class="mini-side-line"></div>
-
-<div class="mini-side-title">SKILLS</div>
-<div class="mini-side-line"></div>
-<div class="mini-side-line"></div>
-
-</div>
-
-<div class="mini-sidebar-right">
-
-<div class="mini-main-title">PROFILE</div>
-<div class="mini-main-line"></div>
-<div class="mini-main-line" style="width:75%"></div>
-
-<div class="mini-main-title" style="margin-top:25px">EXPERIENCE</div>
-<div class="mini-main-line"></div>
-<div class="mini-main-line" style="width:82%"></div>
-
-<div class="mini-main-title" style="margin-top:25px">EDUCATION</div>
-<div class="mini-main-line" style="width:70%"></div>
-
-</div>
-
-</div>
-
-`;
-
-}
-
-if(template.preview === 'modern'){
-
-previewHTML = `
-
-<div class="template-preview mini-modern">
-
-<div class="mini-modern-top">
-
-<div>
-
-<div class="mini-modern-name">Ahmed Mohamed</div>
-
-<div class="mini-modern-role">PROFESSIONAL</div>
-
-</div>
-
-<div class="mini-modern-box"></div>
-
-</div>
-
-<div class="mini-modern-line"></div>
-
-<div class="mini-modern-section">PROFILE</div>
-<div class="mini-modern-line"></div>
-<div class="mini-modern-line" style="width:75%"></div>
-
-<div class="mini-modern-section">EXPERIENCE</div>
-<div class="mini-modern-line"></div>
-<div class="mini-modern-line" style="width:82%"></div>
-
-<div class="mini-modern-section">SKILLS</div>
-<div class="mini-modern-line" style="width:65%"></div>
-
-</
+function selectSpecialty(ty
