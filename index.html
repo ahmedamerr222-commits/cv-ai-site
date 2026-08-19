@@ -2,1680 +2,377 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-
 <meta name="google-site-verification" content="Ya1VaciR5pdWYhgZMnAOUdOBp29fMfkgaMlRRwtTpa8">
-
-<meta name="description" content="CV AI - أنشئ سيرة ذاتية احترافية مناسبة لتخصصك باستخدام الذكاء الاصطناعي.">
-
+<meta name="description" content="CV AI - أنشئ سيرة ذاتية احترافية ومتوافقة مع أنظمة ATS باستخدام الذكاء الاصطناعي.">
 <meta name="robots" content="index, follow">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>CV AI — السيرة الذاتية الاحترافية</title>
+<title>CV AI — إنشاء السيرة الذاتية</title>
 
 <style>
-
-/* =========================
-   GENERAL
-========================= */
-
-*{
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-margin:0;
-font-family:Arial,Tahoma,sans-serif;
-background:#f5f7fb;
-color:#172033;
-}
-
-button,
-input,
-textarea{
-font-family:inherit;
-}
-
-button{
-border:0;
-cursor:pointer;
-}
-
-.hidden{
-display:none!important;
-}
-
-/* =========================
-   HEADER
-========================= */
-
-header{
-background:#fff;
-border-bottom:1px solid #e5e7eb;
-padding:16px 7%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-font-size:27px;
-font-weight:900;
-color:#3157d5;
-}
-
-.badge{
-background:#eef2ff;
-color:#3157d5;
-padding:8px 14px;
-border-radius:30px;
-font-size:13px;
-font-weight:bold;
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-padding:55px 7%;
-text-align:center;
-background:linear-gradient(135deg,#eef2ff,#fff);
-}
-
-.hero h1{
-margin:0 0 12px;
-font-size:40px;
-}
-
-.hero p{
-margin:0;
-font-size:18px;
-color:#667085;
-}
-
-/* =========================
-   CONTAINER
-========================= */
-
-.container{
-max-width:1180px;
-margin:35px auto;
-padding:0 18px;
-}
-
-.section-title{
-text-align:center;
-margin-bottom:25px;
-}
-
-.section-title h2{
-margin:0 0 8px;
-font-size:29px;
-}
-
-.section-title p{
-margin:0;
-color:#667085;
-}
-
-/* =========================
-   SPECIALTIES
-========================= */
-
-.specialties{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:22px;
-}
-
-.specialty{
-background:#fff;
-border:2px solid #e5e7eb;
-border-radius:24px;
-padding:32px 24px;
-text-align:center;
-cursor:pointer;
-transition:.25s;
-box-shadow:0 10px 35px rgba(23,32,51,.06);
-user-select:none;
-}
-
-.specialty:hover{
-transform:translateY(-6px);
-box-shadow:0 18px 45px rgba(23,32,51,.12);
-}
-
-.specialty:active{
-transform:scale(.98);
-}
-
-.specialty.commerce:hover{
-border-color:#2563eb;
-}
-
-.specialty.computers:hover{
-border-color:#7c3aed;
-}
-
-.specialty.engineering:hover{
-border-color:#059669;
-}
-
-.icon{
-width:82px;
-height:82px;
-border-radius:23px;
-display:flex;
-align-items:center;
-justify-content:center;
-margin:0 auto 18px;
-font-size:40px;
-}
-
-.commerce .icon{
-background:#eaf2ff;
-}
-
-.computers .icon{
-background:#f2eaff;
-}
-
-.engineering .icon{
-background:#e7f8f0;
-}
-
-.specialty h3{
-font-size:22px;
-margin:0 0 10px;
-}
-
-.specialty p{
-margin:0;
-color:#667085;
-line-height:1.8;
-}
-
-/* =========================
-   BUTTONS
-========================= */
-
-button{
-background:#3157d5;
-color:#fff;
-padding:13px 21px;
-border-radius:11px;
-font-size:15px;
-font-weight:700;
-transition:.2s;
-}
-
-button:hover{
-opacity:.92;
-transform:translateY(-1px);
-}
-
-.secondary{
-background:#eef2ff;
-color:#3157d5;
-}
-
-.ai{
-background:#111827;
-}
-
-.actions{
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-margin-top:20px;
-}
-
-.back-row{
-margin-bottom:20px;
-}
-
-/* =========================
-   TEMPLATE CARDS
-========================= */
-
-.templates{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:22px;
-}
-
-.template-card{
-background:#fff;
-border:1px solid #e1e5ec;
-border-radius:20px;
-padding:15px;
-box-shadow:0 10px 35px rgba(23,32,51,.07);
-transition:.25s;
-}
-
-.template-card:hover{
-transform:translateY(-5px);
-box-shadow:0 16px 40px rgba(23,32,51,.12);
-}
-
-.template-card h3{
-margin:15px 5px 6px;
-font-size:19px;
-}
-
-.template-card p{
-margin:0 5px 15px;
-color:#667085;
-font-size:14px;
-line-height:1.6;
-min-height:45px;
-}
-
-.template-card button{
-width:100%;
-}
-
-/* =========================
-   TEMPLATE MINI PREVIEWS
-========================= */
-
-.template-preview{
-height:310px;
-border-radius:14px;
-overflow:hidden;
-background:#fff;
-position:relative;
-direction:ltr;
-text-align:left;
-box-shadow:inset 0 0 0 1px #e5e7eb;
-}
-
-/* Corporate */
-
-.mini-corporate{
-padding:22px;
-}
-
-.mini-corporate .mini-name{
-font-size:21px;
-font-weight:900;
-}
-
-.mini-corporate .mini-role{
-font-size:10px;
-margin-top:6px;
-font-weight:bold;
-}
-
-.blue-role{
-color:#2563eb;
-}
-
-.purple-role{
-color:#7c3aed;
-}
-
-.green-role{
-color:#059669;
-}
-
-.mini-line{
-height:5px;
-background:#e5e7eb;
-margin-top:13px;
-border-radius:5px;
-}
-
-.mini-section{
-font-size:8px;
-font-weight:900;
-margin-top:20px;
-}
-
-.mini-small{
-height:5px;
-background:#edf0f4;
-margin-top:6px;
-width:88%;
-border-radius:5px;
-}
-
-/* Sidebar */
-
-.mini-sidebar{
-display:grid;
-grid-template-columns:35% 65%;
-height:100%;
-}
-
-.mini-sidebar-left{
-padding:18px;
-background:#172033;
-color:#fff;
-}
-
-.mini-sidebar-left.purple{
-background:#171126;
-}
-
-.mini-sidebar-left.green{
-background:#064e3b;
-}
-
-.mini-sidebar-right{
-padding:18px;
-}
-
-.mini-sidebar-name{
-font-size:18px;
-font-weight:900;
-}
-
-.mini-sidebar-role{
-font-size:9px;
-margin-top:6px;
-opacity:.8;
-}
-
-.mini-side-title{
-font-size:8px;
-font-weight:900;
-margin-top:22px;
-}
-
-.mini-side-line{
-height:4px;
-background:#ffffff55;
-margin-top:6px;
-border-radius:5px;
-}
-
-.mini-main-title{
-font-size:9px;
-font-weight:900;
-margin-bottom:6px;
-}
-
-.mini-main-title.blue{
-color:#2563eb;
-}
-
-.mini-main-title.purple{
-color:#7c3aed;
-}
-
-.mini-main-title.green{
-color:#059669;
-}
-
-.mini-main-line{
-height:5px;
-background:#e5e7eb;
-margin-top:7px;
-width:92%;
-border-radius:5px;
-}
-
-/* Modern */
-
-.mini-modern{
-padding:21px;
-}
-
-.mini-modern-top{
-display:flex;
-justify-content:space-between;
-align-items:flex-start;
-}
-
-.mini-modern-name{
-font-size:20px;
-font-weight:900;
-}
-
-.mini-modern-role{
-font-size:9px;
-font-weight:bold;
-margin-top:5px;
-}
-
-.mini-modern-box{
-width:48px;
-height:48px;
-border-radius:13px;
-}
-
-.mini-modern-box.blue{
-background:#dbeafe;
-}
-
-.mini-modern-box.purple{
-background:#ede9fe;
-}
-
-.mini-modern-box.green{
-background:#d1fae5;
-}
-
-.mini-modern-section{
-font-size:8px;
-font-weight:900;
-margin-top:20px;
-}
-
-.mini-modern-section.blue{
-color:#2563eb;
-}
-
-.mini-modern-section.purple{
-color:#7c3aed;
-}
-
-.mini-modern-section.green{
-color:#059669;
-}
-
-/* =========================
-   FORM
-========================= */
-
-.card{
-background:#fff;
-border:1px solid #e5e9f1;
-border-radius:20px;
-padding:26px;
-box-shadow:0 10px 35px rgba(23,32,51,.06);
-}
-
-.form-top{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:15px;
-margin-bottom:22px;
-}
-
-.form-top h2{
-margin:0 0 10px;
-}
-
-.selected{
-display:inline-block;
-font-size:13px;
-font-weight:bold;
-background:#eef2ff;
-color:#3157d5;
-padding:8px 13px;
-border-radius:25px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:17px;
-}
-
-label{
-display:block;
-font-weight:bold;
-margin-bottom:7px;
-}
-
-input,
-textarea{
-width:100%;
-padding:13px;
-border:1px solid #d9deea;
-border-radius:11px;
-font-size:15px;
-outline:none;
-}
-
-input:focus,
-textarea:focus{
-border-color:#3157d5;
-box-shadow:0 0 0 3px #3157d51a;
-}
-
-textarea{
-min-height:110px;
-resize:vertical;
-}
-
-.full{
-grid-column:1/-1;
-}
-
-.status{
-display:none;
-margin-top:15px;
-padding:13px;
-border-radius:11px;
-line-height:1.6;
-}
-
-/* =========================
-   CV COMMON
-========================= */
-
-.preview{
-display:none;
-margin-top:30px;
-}
-
-.cv{
-width:210mm;
-min-height:297mm;
-max-width:100%;
-margin:auto;
-background:#fff;
-direction:ltr;
-text-align:left;
-overflow:hidden;
-box-shadow:0 10px 35px rgba(0,0,0,.08);
-}
-
-.cv h1,
-.cv h2,
-.cv h3,
-.cv p{
-margin-left:0;
-margin-right:0;
-}
-
-.cv p{
-font-size:13px;
-line-height:1.65;
-}
-
-.cv h3{
-font-size:13px;
-margin:25px 0 8px;
-}
-
-/* =========================
-   COMMERCE 1
-========================= */
-
-.cv.finance-one{
-padding:38px 45px;
-border-top:10px solid #2563eb;
-}
-
-.finance-one .cv-name{
-font-size:34px;
-font-weight:900;
-color:#172033;
-}
-
-.finance-one .cv-role{
-color:#2563eb;
-font-weight:bold;
-font-size:16px;
-margin-top:7px;
-}
-
-.finance-one .contact{
-margin-top:10px;
-font-size:12px;
-color:#667085;
-}
-
-.finance-one h3{
-color:#2563eb;
-border-bottom:2px solid #dbe7ff;
-padding-bottom:7px;
-}
-
-/* =========================
-   COMMERCE 2
-========================= */
-
-.cv.finance-two{
-display:grid;
-grid-template-columns:31% 69%;
-min-height:297mm;
-}
-
-.finance-two .side{
-background:#172033;
-color:#fff;
-padding:35px 25px;
-}
-
-.finance-two .main{
-padding:38px 35px;
-}
-
-.finance-two .side-name{
-font-size:25px;
-font-weight:900;
-line-height:1.2;
-}
-
-.finance-two .side-role{
-font-size:12px;
-margin-top:8px;
-color:#93c5fd;
-font-weight:bold;
-}
-
-.finance-two .side h3{
-color:#93c5fd;
-border-bottom:1px solid #ffffff33;
-padding-bottom:6px;
-}
-
-.finance-two .side p{
-font-size:11px;
-color:#e5e7eb;
-}
-
-.finance-two .main h1{
-font-size:31px;
-color:#172033;
-}
-
-.finance-two .main .main-role{
-color:#2563eb;
-font-weight:bold;
-}
-
-.finance-two .main h3{
-color:#2563eb;
-border-bottom:2px solid #dbe7ff;
-padding-bottom:7px;
-}
-
-/* =========================
-   COMMERCE 3
-========================= */
-
-.cv.finance-three{
-padding:40px;
-border:1px solid #dbe2ea;
-}
-
-.finance-three .top{
-display:flex;
-justify-content:space-between;
-gap:25px;
-border-bottom:4px solid #7c3aed;
-padding-bottom:20px;
-}
-
-.finance-three .top-name{
-font-size:34px;
-font-weight:900;
-}
-
-.finance-three .top-role{
-color:#7c3aed;
-font-weight:bold;
-margin-top:6px;
-}
-
-.finance-three .top-box{
-width:80px;
-height:80px;
-border-radius:18px;
-background:#f0eaff;
-}
-
-.finance-three h3{
-color:#7c3aed;
-}
-
-/* =========================
-   TECH 1
-========================= */
-
-.cv.tech-one{
-padding:0;
-}
-
-.tech-one .tech-header{
-background:#111827;
-color:#fff;
-padding:40px 45px;
-}
-
-.tech-one .tech-name{
-font-size:35px;
-font-weight:900;
-}
-
-.tech-one .tech-role{
-color:#a78bfa;
-font-weight:bold;
-margin-top:7px;
-}
-
-.tech-one .tech-contact{
-font-size:12px;
-margin-top:10px;
-color:#d1d5db;
-}
-
-.tech-one .tech-body{
-padding:20px 45px 45px;
-}
-
-.tech-one h3{
-color:#7c3aed;
-border-bottom:2px solid #ede9fe;
-padding-bottom:7px;
-}
-
-/* =========================
-   TECH 2
-========================= */
-
-.cv.tech-two{
-display:grid;
-grid-template-columns:27% 73%;
-min-height:297mm;
-}
-
-.tech-two .side{
-background:#f3f0ff;
-padding:35px 23px;
-border-right:5px solid #7c3aed;
-}
-
-.tech-two .main{
-padding:40px 35px;
-}
-
-.tech-two .side-name{
-font-size:23px;
-font-weight:900;
-}
-
-.tech-two .side-role{
-color:#7c3aed;
-font-size:12px;
-font-weight:bold;
-margin-top:7px;
-}
-
-.tech-two .side h3{
-color:#7c3aed;
-}
-
-.tech-two .main h1{
-font-size:32px;
-}
-
-.tech-two .main-role{
-color:#7c3aed;
-font-weight:bold;
-}
-
-.tech-two .main h3{
-color:#7c3aed;
-}
-
-/* =========================
-   TECH 3
-========================= */
-
-.cv.tech-three{
-padding:38px;
-border-left:9px solid #7c3aed;
-}
-
-.tech-three .top{
-display:flex;
-justify-content:space-between;
-align-items:flex-start;
-gap:20px;
-}
-
-.tech-three .name{
-font-size:34px;
-font-weight:900;
-}
-
-.tech-three .role{
-color:#7c3aed;
-font-weight:bold;
-margin-top:7px;
-}
-
-.tech-three .code-box{
-background:#111827;
-color:#a78bfa;
-font-family:monospace;
-padding:18px;
-border-radius:12px;
-font-size:12px;
-min-width:105px;
-}
-
-.tech-three h3{
-color:#7c3aed;
-}
-
-/* =========================
-   ENGINEERING 1
-========================= */
-
-.cv.eng-one{
-padding:0;
-}
-
-.eng-one .header{
-background:#065f46;
-color:#fff;
-padding:40px 45px;
-position:relative;
-}
-
-.eng-one .header:after{
-content:"";
-position:absolute;
-left:0;
-bottom:-12px;
-width:100%;
-height:12px;
-background:#10b981;
-}
-
-.eng-one .name{
-font-size:35px;
-font-weight:900;
-}
-
-.eng-one .role{
-color:#a7f3d0;
-font-weight:bold;
-margin-top:7px;
-}
-
-.eng-one .body{
-padding:35px 45px;
-}
-
-.eng-one h3{
-color:#047857;
-border-bottom:2px solid #d1fae5;
-padding-bottom:7px;
-}
-
-/* =========================
-   ENGINEERING 2
-========================= */
-
-.cv.eng-two{
-display:grid;
-grid-template-columns:32% 68%;
-min-height:297mm;
-}
-
-.eng-two .side{
-background:#ecfdf5;
-padding:38px 25px;
-border-right:7px solid #059669;
-}
-
-.eng-two .main{
-padding:38px 35px;
-}
-
-.eng-two .side-name{
-font-size:24px;
-font-weight:900;
-}
-
-.eng-two .side-role{
-color:#047857;
-font-weight:bold;
-font-size:12px;
-margin-top:7px;
-}
-
-.eng-two .side h3{
-color:#047857;
-}
-
-.eng-two .main h1{
-font-size:32px;
-}
-
-.eng-two .main-role{
-color:#047857;
-font-weight:bold;
-}
-
-.eng-two .main h3{
-color:#047857;
-}
-
-/* =========================
-   ENGINEERING 3
-========================= */
-
-.cv.eng-three{
-padding:38px 45px;
-border-top:9px solid #059669;
-}
-
-.eng-three .top{
-display:flex;
-justify-content:space-between;
-border-bottom:2px solid #d1fae5;
-padding-bottom:18px;
-gap:20px;
-}
-
-.eng-three .name{
-font-size:34px;
-font-weight:900;
-}
-
-.eng-three .role{
-color:#059669;
-font-weight:bold;
-margin-top:7px;
-}
-
-.eng-three .project-box{
-width:80px;
-height:80px;
-background:#d1fae5;
-border-radius:12px;
-}
-
-.eng-three h3{
-color:#047857;
-}
-
-/* =========================
-   PRINT A4
-========================= */
-
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Tahoma,sans-serif;background:#f6f8fc;color:#172033}
+header{background:#fff;border-bottom:1px solid #e7eaf0;padding:16px 7%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:25px;font-weight:800;color:#3157d5}.badge{font-size:13px;background:#eef2ff;color:#3157d5;padding:8px 12px;border-radius:20px}
+.hero{padding:50px 7%;text-align:center;background:linear-gradient(135deg,#eef2ff,#fff)}
+.hero h1{font-size:40px;margin:0 0 12px}.hero p{color:#667085;font-size:18px;margin:0}
+.container{max-width:1100px;margin:35px auto;padding:0 18px}.section-title{text-align:center;margin-bottom:25px}.section-title h2{margin:0 0 8px}.section-title p{color:#667085;margin:0}.hidden{display:none!important}
+.specialties{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.specialty{background:#fff;border:2px solid #e5e9f1;border-radius:18px;padding:28px 20px;text-align:center;cursor:pointer;transition:.2s;box-shadow:0 8px 30px #1720330b}.specialty:hover{transform:translateY(-4px);border-color:#3157d5}
+.icon{width:70px;height:70px;margin:0 auto 15px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:34px}.commerce .icon{background:#eaf1ff}.computers .icon{background:#f0eaff}.engineering .icon{background:#e8f8ef}.specialty h3{margin:0 0 8px;font-size:21px}.specialty p{margin:0;color:#667085;line-height:1.6}
+.templates{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.template-card{background:#fff;border:1px solid #e5e9f1;border-radius:18px;padding:16px;box-shadow:0 8px 30px #1720330b}.template-card h3{margin:14px 0 7px}.template-card p{color:#667085;font-size:14px;line-height:1.6;min-height:45px}
+.template-preview{height:230px;border:1px solid #ddd;border-radius:12px;background:#fff;padding:18px;direction:ltr;text-align:left;overflow:hidden}.preview-name{font-size:22px;font-weight:800}.preview-role{font-size:12px;margin-top:5px}.preview-bar{height:5px;width:65%;margin:15px 0}.preview-title{font-size:9px;font-weight:800;margin-top:13px}.preview-line{height:5px;background:#e5e7eb;margin-top:6px;width:90%}.blue .preview-bar{background:#3157d5}.blue .preview-role{color:#3157d5}.purple .preview-bar{background:#7c3aed}.purple .preview-role{color:#7c3aed}.green .preview-bar{background:#15803d}.green .preview-role{color:#15803d}
+.card{background:#fff;border:1px solid #e5e9f1;border-radius:18px;padding:25px;box-shadow:0 8px 30px #1720330b}.form-top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:20px}.selected{font-size:13px;font-weight:700;background:#eef2ff;color:#3157d5;padding:8px 12px;border-radius:20px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}label{font-weight:700;display:block;margin-bottom:7px}input,textarea{width:100%;padding:13px;border:1px solid #d9deea;border-radius:10px;font-size:15px;font-family:inherit}textarea{min-height:105px;resize:vertical}.full{grid-column:1/-1}
+button{border:0;border-radius:11px;padding:13px 21px;font-size:15px;font-weight:700;cursor:pointer;background:#3157d5;color:#fff}.secondary{background:#eef2ff;color:#3157d5}.ai{background:#111827}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.status{display:none;margin-top:15px;padding:13px;border-radius:10px;line-height:1.6}
+.preview{margin-top:25px;display:none}.cv{background:#fff;max-width:820px;min-height:1000px;margin:auto;direction:ltr;text-align:left;overflow:hidden;color:#202938}.cv p{font-size:13px;line-height:1.65;margin:6px 0}.cv h1{margin:0;font-size:31px;line-height:1.1}.cv h3{font-size:14px;letter-spacing:1px;margin:0 0 10px}.cv .role{font-size:14px;font-weight:700;margin-top:7px}.cv .contact{font-size:11px;color:#667085;margin-top:8px}
+.cv-body{padding:30px}.cv-section{margin-top:22px}.cv-section h3{padding-bottom:7px;border-bottom:2px solid #ddd}.cv-side-title{font-size:11px;letter-spacing:1.3px;font-weight:800;margin:20px 0 8px}.cv-side-text{font-size:11px;line-height:1.65;color:#465063}.cv-item{margin-bottom:15px}.cv-item-title{font-size:13px;font-weight:800}.cv-item-meta{font-size:10px;color:#6b7280;margin:3px 0 5px}.cv-skills{display:flex;flex-wrap:wrap;gap:6px}.cv-skill{font-size:10px;padding:5px 8px;border-radius:7px;background:#eef2ff;color:#253b8f}.cv-ai{white-space:normal}
+
+/* تجارة: عمود جانبي رسمي */
+.cv.commerce-blue{display:grid;grid-template-columns:235px 1fr;min-height:1000px}.cv.commerce-blue .cv-sidebar{background:#12264a;color:#fff;padding:28px 22px}.cv.commerce-blue .cv-main{padding:34px 32px}.cv.commerce-blue .cv-sidebar .cv-side-text{color:#dce5f4}.cv.commerce-blue .cv-side-title{color:#8fb6ff}.cv.commerce-blue .cv-main h1{color:#12264a}.cv.commerce-blue .cv-main h3{color:#2455a6;border-color:#dbe5f5}
+
+/* تجارة حديث: شريط علوي */
+.cv.commerce-purple{padding:0}.cv.commerce-purple .cv-header{background:linear-gradient(135deg,#182c55,#355fba);color:#fff;padding:35px 38px}.cv.commerce-purple .cv-header .role,.cv.commerce-purple .cv-header .contact{color:#dbe8ff}.cv.commerce-purple .cv-content{display:grid;grid-template-columns:1fr 250px;gap:28px;padding:30px 36px}.cv.commerce-purple .cv-section h3{color:#244f9d;border-color:#d8e2f2}.cv.commerce-purple .cv-side{border-left:3px solid #6d8fd6;padding-left:20px}.cv.commerce-purple .cv-side-title{color:#3157d5}
+
+/* حاسبات: Tech */
+.cv.computers-blue{background:#0b1020;color:#e9efff;position:relative}.cv.computers-blue:before{content:"";display:block;height:9px;background:linear-gradient(90deg,#7c3aed,#2563eb,#06b6d4)}.cv.computers-blue .cv-tech-head{padding:35px 38px;border-bottom:1px solid #27314b}.cv.computers-blue .cv-tech-grid{display:grid;grid-template-columns:1fr 245px;gap:28px;padding:28px 38px}.cv.computers-blue h1{color:#fff}.cv.computers-blue .role{color:#7dd3fc}.cv.computers-blue .contact,.cv.computers-blue .cv-item-meta{color:#9ca9c7}.cv.computers-blue .cv-section h3{color:#7dd3fc;border-color:#34415e}.cv.computers-blue .cv-side{background:#111a30;padding:18px;border-radius:14px}.cv.computers-blue .cv-side-title{color:#c4b5fd}.cv.computers-blue .cv-side-text{color:#c9d4ea}.cv.computers-blue .cv-skill{background:#1c2b4b;color:#93c5fd;border:1px solid #31527f}
+
+/* حاسبات حديث */
+.cv.computers-purple{padding:32px;position:relative;background:#fbfaff}.cv.computers-purple .cv-tech-banner{display:flex;justify-content:space-between;align-items:flex-end;background:#fff;border:1px solid #e5dafa;border-radius:18px;padding:25px 28px;border-right:7px solid #7c3aed}.cv.computers-purple .cv-tech-content{display:grid;grid-template-columns:1fr 220px;gap:26px}.cv.computers-purple .cv-section h3{color:#6d28d9;border-color:#e9d5ff}.cv.computers-purple .cv-side{margin-top:22px;background:#f3e8ff;border-radius:16px;padding:18px}.cv.computers-purple .cv-side-title{color:#6d28d9}
+
+/* هندسة: شريط جانبي */
+.cv.engineering-blue{display:grid;grid-template-columns:220px 1fr;min-height:1000px}.cv.engineering-blue .cv-sidebar{background:#163b35;color:#fff;padding:30px 20px;position:relative}.cv.engineering-blue .cv-sidebar:after{content:"";position:absolute;right:0;top:0;width:7px;height:100%;background:#8cc63e}.cv.engineering-blue .cv-main{padding:34px 32px}.cv.engineering-blue .cv-main h1{color:#163b35}.cv.engineering-blue .role{color:#4d7c0f}.cv.engineering-blue .cv-section h3{color:#2f5f2e;border-color:#d8e4d3}.cv.engineering-blue .cv-side-title{color:#b7e36c}.cv.engineering-blue .cv-sidebar .cv-side-text{color:#dcead9}
+
+/* هندسة حديث */
+.cv.engineering-green{padding:0}.cv.engineering-green .eng-head{padding:34px 38px;background:#eef7ee;border-bottom:8px solid #3f7d3b}.cv.engineering-green .eng-head .role{color:#3f7d3b}.cv.engineering-green .eng-grid{display:grid;grid-template-columns:1fr 245px;gap:30px;padding:30px 38px}.cv.engineering-green .cv-section h3{color:#356b32;border-color:#cfe2cd}.cv.engineering-green .cv-side{background:#f4f8f3;padding:18px;border-radius:14px;border:1px solid #d9e7d7}.cv.engineering-green .cv-side-title{color:#356b32}
+
+/* ATS */
+.cv.ats{padding:40px;border-top:7px solid #111827}.cv.ats h3{color:#111827;border-bottom:1px solid #111827}.cv.ats .role{color:#111827}
+
+/* PHOTO UPLOAD */
+.photo-upload{display:flex;align-items:center;gap:18px;padding:15px;border:1px dashed #cbd5e1;border-radius:14px;background:#f8fafc}
+.photo-preview{width:86px;height:86px;border-radius:14px;object-fit:cover;border:1px solid #d9deea;background:#fff;display:none}
+.photo-placeholder{width:86px;height:86px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:#eef2ff;color:#3157d5;font-size:30px}
+.photo-upload-info{flex:1}
+.photo-upload-info small{display:block;color:#667085;margin-top:5px;line-height:1.5}
+.cv-photo{width:88px;height:88px;border-radius:14px;object-fit:cover;border:1px solid #dbe2ea}
+.cv-photo-wrap{display:flex;justify-content:flex-end;margin-bottom:12px}
+.cv-photo-hidden{display:none!important}
+
+/* موبايل */
+@media(max-width:800px){.specialties,.templates{grid-template-columns:1fr}.cv.commerce-blue,.cv.engineering-blue{grid-template-columns:1fr}.cv.commerce-blue .cv-sidebar,.cv.engineering-blue .cv-sidebar{padding:22px}.cv.commerce-purple .cv-content,.cv.computers-blue .cv-tech-grid,.cv.computers-purple .cv-tech-content,.cv.engineering-green .eng-grid{grid-template-columns:1fr}.cv.computers-purple{padding:18px}.cv.computers-blue .cv-tech-grid,.cv.computers-blue .cv-tech-head,.cv.engineering-green .eng-grid,.cv.engineering-green .eng-head{padding:22px}}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.full{grid-column:auto}.hero h1{font-size:30px}.form-top{align-items:flex-start;flex-direction:column}}
+
+/* طباعة */
 @media print{
-
-@page{
-size:A4;
-margin:0;
+@page{size:A4;margin:0}
+body{background:#fff}
+header,.hero,#specialtySection,#templateSection,#formSection,.preview-title,.preview .actions{display:none!important}
+.container{margin:0;padding:0}.preview{display:block!important;margin:0}.card{border:0;box-shadow:none;padding:0}
+.cv{width:210mm;min-height:297mm;max-width:none;margin:0;box-shadow:none}
 }
-
-html,
-body{
-background:#fff!important;
-margin:0!important;
-padding:0!important;
-}
-
-header,
-.hero,
-#specialtySection,
-#templateSection,
-#formSection,
-.preview-title,
-.preview .actions{
-display:none!important;
-}
-
-.container{
-margin:0!important;
-padding:0!important;
-max-width:none!important;
-}
-
-.preview{
-display:block!important;
-margin:0!important;
-}
-
-.preview .card{
-padding:0!important;
-border:0!important;
-box-shadow:none!important;
-}
-
-.cv{
-width:210mm!important;
-min-height:297mm!important;
-max-width:none!important;
-margin:0!important;
-box-shadow:none!important;
-}
-
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:850px){
-
-.specialties,
-.templates{
-grid-template-columns:1fr;
-}
-
-.cv{
-width:100%;
-}
-
-}
-
-@media(max-width:700px){
-
-.grid{
-grid-template-columns:1fr;
-}
-
-.full{
-grid-column:auto;
-}
-
-.hero h1{
-font-size:30px;
-}
-
-.form-top{
-flex-direction:column;
-align-items:flex-start;
-}
-
-.cv.finance-two,
-.cv.tech-two,
-.cv.eng-two{
-display:block;
-}
-
-.finance-two .side,
-.tech-two .side,
-.eng-two .side{
-border-right:0;
-border-bottom:5px solid;
-}
-
-.finance-three .top,
-.tech-three .top,
-.eng-three .top{
-flex-direction:column;
-}
-
-}
-
-/* =========================
-   FALLBACK
-========================= */
-
-.no-js-message{
-padding:20px;
-background:#fff3cd;
-color:#664d03;
-margin:20px;
-border-radius:10px;
-}
-
 </style>
 </head>
 
 <body>
-
-<header>
-
-<div class="logo">
-CV AI
-</div>
-
-<div class="badge">
-الإصدار الاحترافي
-</div>
-
-</header>
+<header><div class="logo">CV AI</div><div class="badge">الإصدار الاحترافي</div></header>
 
 <section class="hero">
-
-<h1>
-أنشئ CV احترافي مناسب لتخصصك
-</h1>
-
-<p>
-اختر تخصصك ثم اختر التصميم الذي يناسبك.
-</p>
-
+<h1>أنشئ CV احترافي مناسب لتخصصك</h1>
+<p>اختر تخصصك ثم اختر القالب المناسب لك.</p>
 </section>
 
 <div class="container">
 
-<!-- =========================
-     SPECIALTY
-========================= -->
-
 <section id="specialtySection">
-
-<div class="section-title">
-
-<h2>
-اختر تخصصك
-</h2>
-
-<p>
-اختار المجال المناسب لك
-</p>
-
-</div>
-
+<div class="section-title"><h2>اختر تخصصك</h2><p>اختر المجال الذي تريد إنشاء السيرة الذاتية له.</p></div>
 <div class="specialties">
-
-<div
-class="specialty commerce"
-onclick="selectSpecialty('commerce')"
->
-
-<div class="icon">
-🧾
+<div class="specialty commerce" data-specialty="commerce"><div class="icon">🧾</div><h3>تجارة ومحاسبة</h3><p>قوالب مناسبة للمحاسبين والماليات والبنوك وإدارة الأعمال.</p></div>
+<div class="specialty computers" data-specialty="computers"><div class="icon">💻</div><h3>حاسبات وتكنولوجيا</h3><p>قوالب مناسبة للبرمجة وIT والذكاء الاصطناعي والبيانات.</p></div>
+<div class="specialty engineering" data-specialty="engineering"><div class="icon">⚙️</div><h3>هندسة</h3><p>قوالب مناسبة للمهندسين والمشاريع والتدريب الهندسي.</p></div>
 </div>
-
-<h3>
-تجارة ومحاسبة
-</h3>
-
-<p>
-قوالب للمحاسبة والمالية والبنوك وإدارة الأعمال.
-</p>
-
-</div>
-
-<div
-class="specialty computers"
-onclick="selectSpecialty('computers')"
->
-
-<div class="icon">
-💻
-</div>
-
-<h3>
-حاسبات وتكنولوجيا
-</h3>
-
-<p>
-قوالب للبرمجة وIT والذكاء الاصطناعي والبيانات.
-</p>
-
-</div>
-
-<div
-class="specialty engineering"
-onclick="selectSpecialty('engineering')"
->
-
-<div class="icon">
-⚙️
-</div>
-
-<h3>
-هندسة
-</h3>
-
-<p>
-قوالب للمهندسين والمشاريع والتخصصات الهندسية.
-</p>
-
-</div>
-
-</div>
-
 </section>
 
-
-<!-- =========================
-     TEMPLATES
-========================= -->
-
-<section
-id="templateSection"
-class="hidden"
->
-
-<div class="back-row">
-
-<button
-type="button"
-onclick="backToSpecialties()"
-class="secondary"
->
-← رجوع
-</button>
-
-</div>
-
-<div class="section-title">
-
-<h2 id="templateHeading">
-اختر قالب الـCV
-</h2>
-
-<p>
-كل قالب له تصميم مختلف.
-</p>
-
-</div>
-
-<div
-class="templates"
-id="templates"
->
-</div>
-
+<section id="templateSection" class="hidden">
+<div style="margin-bottom:20px"><button type="button" class="secondary" id="backButton">← رجوع</button></div>
+<div class="section-title"><h2 id="templateHeading">اختر قالب الـCV</h2><p>اختر التصميم المناسب لك.</p></div>
+<div class="templates" id="templates"></div>
 </section>
 
-
-<!-- =========================
-     FORM
-========================= -->
-
-<section
-id="formSection"
-class="hidden"
->
-
+<section id="formSection" class="hidden">
 <div class="card">
-
 <div class="form-top">
-
-<div>
-
-<h2>
-بيانات الـCV
-</h2>
-
-<div
-id="selectedTemplate"
-class="selected"
->
-</div>
-
-</div>
-
-<button
-type="button"
-class="secondary"
-onclick="changeTemplate()"
->
-تغيير القالب
-</button>
-
+<div><h2>بيانات الـCV</h2><div id="selectedTemplate" class="selected"></div></div>
+<button type="button" class="secondary" id="changeTemplate">تغيير القالب</button>
 </div>
 
 <div class="grid">
-
-<div>
-
-<label>
-الاسم
-</label>
-
-<input
-id="name"
-placeholder="Ahmed Mohamed"
->
-
-</div>
-
-<div>
-
-<label>
-الوظيفة المستهدفة
-</label>
-
-<input
-id="role"
-placeholder="Accountant"
->
-
-</div>
-
-<div>
-
-<label>
-البريد الإلكتروني
-</label>
-
-<input
-id="email"
-placeholder="example@email.com"
->
-
-</div>
-
-<div>
-
-<label>
-رقم الهاتف
-</label>
-
-<input
-id="phone"
-placeholder="+20 ..."
->
-
-</div>
-
+<div><label>الاسم</label><input id="name" placeholder="أدخل الاسم الكامل"></div>
+<div><label>الوظيفة المستهدفة</label><input id="role" placeholder="أدخل الوظيفة المستهدفة"></div>
+<div><label>البريد الإلكتروني</label><input id="email" placeholder="أدخل البريد الإلكتروني"></div>
+<div><label>رقم الهاتف</label><input id="phone" placeholder="أدخل رقم الهاتف"></div>
 <div class="full">
-
-<label>
-الخبرة العملية
-</label>
-
-<textarea
-id="experience"
-placeholder="اكتب خبرتك العملية بالتفصيل"
-></textarea>
-
+<label>الصورة الشخصية <span style="font-weight:normal;color:#667085">(اختياري)</span></label>
+<div class="photo-upload">
+<div class="photo-placeholder" id="photoPlaceholder">📷</div>
+<img id="photoPreview" class="photo-preview" alt="معاينة الصورة">
+<div class="photo-upload-info">
+<input id="photo" type="file" accept="image/*">
+<small>يفضل صورة شخصية واضحة. الصورة اختيارية، وقالب Professional ATS لا يعتمد عليها.</small>
 </div>
-
-<div>
-
-<label>
-التعليم
-</label>
-
-<textarea
-id="education"
-placeholder="كلية التجارة — جامعة ..."
-></textarea>
-
+<button type="button" class="secondary" id="removePhoto">حذف الصورة</button>
 </div>
-
-<div>
-
-<label>
-المهارات
-</label>
-
-<textarea
-id="skills"
-placeholder="Excel, Accounting, ERP"
-></textarea>
-
 </div>
-
-<div>
-
-<label>
-اللغات
-</label>
-
-<textarea
-id="languages"
-placeholder="Arabic — Native&#10;English — Very Good"
-></textarea>
-
-</div>
-
-<div class="full">
-
-<label>
-نبذة عنك
-</label>
-
-<textarea
-id="summary"
-placeholder="اكتب نبذة بسيطة عن نفسك"
-></textarea>
-
-</div>
-
+<div class="full"><label>الخبرة العملية</label><textarea id="experience" placeholder="اكتب الخبرة العملية والمهام والإنجازات"></textarea></div>
+<div><label>التعليم</label><textarea id="education" placeholder="اكتب المؤهل والجامعة وسنة التخرج"></textarea></div>
+<div><label>المهارات</label><textarea id="skills" placeholder="اكتب المهارات مفصولة بفواصل"></textarea></div>
+<div><label>اللغات</label><textarea id="languages" placeholder="اكتب اللغات ومستوى كل لغة"></textarea></div>
+<div class="full"><label>نبذة عنك</label><textarea id="summary" placeholder="اكتب نبذة مهنية مختصرة"></textarea></div>
 </div>
 
 <div class="actions">
-
-<button
-type="button"
-class="ai"
-onclick="improveAI()"
->
-✨ تحسين بالـAI
-</button>
-
-<button
-type="button"
-onclick="generateCV()"
->
-إنشاء الـCV
-</button>
-
-<button
-type="button"
-class="secondary"
-onclick="clearForm()"
->
-مسح
-</button>
-
+<button type="button" class="ai" id="aiButton">✨ تحسين بالـAI</button>
+<button type="button" id="generateButton">إنشاء الـCV</button>
+<button type="button" class="secondary" id="clearButton">مسح</button>
 </div>
-
-<div
-class="status"
-id="status"
-></div>
-
+<div class="status" id="status"></div>
 </div>
-
 </section>
 
-
-<!-- =========================
-     PREVIEW
-========================= -->
-
-<section
-class="preview"
-id="preview"
->
-
+<section class="preview" id="preview">
 <div class="card">
-
-<h2 class="preview-title">
-معاينة الـCV
-</h2>
-
-<div
-id="cv"
-class="cv"
-></div>
-
-<div class="actions">
-
-<button
-type="button"
-onclick="window.print()"
->
-📄 طباعة / حفظ PDF
-</button>
-
+<h2 class="preview-title">معاينة الـCV</h2>
+<div id="cv" class="cv"></div>
+<div class="actions"><button type="button" id="printButton">📄 طباعة / حفظ PDF</button></div>
 </div>
-
-</div>
-
 </section>
 
 </div>
-
 
 <script>
+const $=id=>document.getElementById(id);
+const v=id=>$(id).value.trim();
+let selectedSpecialty='';
+let selectedTemplate='';
+let aiCV='';
 
-/* =====================================================
-   CV AI
-   IMPORTANT:
-   Worker URL is kept exactly as provided.
-===================================================== */
+/* نفس Worker القديم بدون تغيير */
+const WORKER_URL='https://bold-cell-b95f.ahmedamerr222.workers.dev/';
 
-const WORKER_URL =
-'https://cv-ai-site-2.ahmedamerr222.workers.dev/';
+const specialtyNames={commerce:'تجارة ومحاسبة',computers:'حاسبات وتكنولوجيا',engineering:'هندسة'};
 
-
-/* =========================
-   STATE
-========================= */
-
-let selectedSpecialty = '';
-
-let selectedTemplate = '';
-
-let aiCV = '';
-
-
-/* =========================
-   HELPERS
-========================= */
-
-function $(id){
-
-return document.getElementById(id);
-
-}
-
-
-function value(id){
-
-const element = $(id);
-
-if(!element){
-
-return '';
-
-}
-
-return element.value.trim();
-
-}
-
-
-function escapeHTML(text){
-
-return String(text || '').replace(
-/[&<>"']/g,
-function(char){
-
-const map = {
-
-'&':'&amp;',
-'<':'&lt;',
-'>':'&gt;',
-'"':'&quot;',
-"'":'&#039;'
-
-};
-
-return map[char];
-
-}
-);
-
-}
-
-
-function nl(text){
-
-return escapeHTML(text)
-.replace(/\r?\n/g,'<br>');
-
-}
-
-
-function skillsHTML(text){
-
-if(!text){
-
-return 'Add your professional skills here.';
-
-}
-
-return escapeHTML(text)
-.replace(/\r?\n/g,'<br>')
-.replace(/,/g,' • ');
-
-}
-
-
-/* =========================
-   SPECIALTY NAMES
-========================= */
-
-const specialtyNames = {
-
-commerce:'تجارة ومحاسبة',
-
-computers:'حاسبات وتكنولوجيا',
-
-engineering:'هندسة'
-
-};
-
-
-/* =========================
-   TEMPLATES
-========================= */
-
-const templates = {
-
+const templates={
 commerce:[
-
-{
-id:'finance-one',
-name:'Corporate Accounting',
-description:'Corporate Finance / Accounting — مناسب للمحاسبين والشركات.',
-cv:'finance-one'
-},
-
-{
-id:'finance-two',
-name:'Finance Executive',
-description:'تصميم احترافي جانبي مناسب للمالية والبنوك.',
-cv:'finance-two'
-},
-
-{
-id:'finance-three',
-name:'Finance Modern',
-description:'تصميم عصري للوظائف المالية والإدارية.',
-cv:'finance-three'
-}
-
+{id:'commerce-blue',name:'محاسبة احترافي',description:'تصميم رسمي بعمود جانبي للمحاسبين والماليات.',color:'blue',cvClass:'commerce-blue'},
+{id:'commerce-purple',name:'Finance Modern',description:'تصميم حديث مناسب للوظائف المالية والإدارية.',color:'purple',cvClass:'commerce-purple'},
+{id:'commerce-ats',name:'Professional ATS',description:'تصميم واضح وبسيط مناسب لأنظمة ATS.',color:'blue',cvClass:'ats'}
 ],
-
 computers:[
+{id:'computers-blue',name:'Developer Professional',description:'تصميم Tech داكن للمبرمجين وIT والذكاء الاصطناعي.',color:'blue',cvClass:'computers-blue'},
+{id:'computers-purple',name:'Software Modern',description:'تصميم عصري للبرمجة والتكنولوجيا والمشاريع.',color:'purple',cvClass:'computers-purple'},
+{id:'computers-ats',name:'Professional ATS',description:'قالب واضح للتقديم على شركات التكنولوجيا.',color:'purple',cvClass:'ats'}
+],
+engineering:[
+{id:'engineering-blue',name:'Engineering Professional',description:'تصميم هندسي بعمود جانبي ومعلومات فنية.',color:'green',cvClass:'engineering-blue'},
+{id:'engineering-green',name:'Engineering Modern',description:'تصميم حديث للمشاريع والخبرات الهندسية.',color:'green',cvClass:'engineering-green'},
+{id:'engineering-ats',name:'Professional ATS',description:'قالب بسيط مناسب للتقديم على الشركات.',color:'green',cvClass:'ats'}
+]
+};
 
-{
-id:'tech-one',
-name:'Modern Developer',
-description:'Modern Tech — مناسب للمبرمجين وIT.',
-cv:'tech-one'
-},
-
-{
-id:'tech-two',
-name:'Software Engineer',
-description:'تصميم تقني حديث للمطورين والـAI.',
-cv:'tech-two'
-},
-
-{
-id:'tech-three',
-name:'Developer Code',
-description:'تصميم بطابع برمجي مميز.',
-cv:'tech-three'
+function selectSpecialty(type){
+selectedSpecialty=type;
+$('specialtySection').classList.add('hidden');
+$('templateSection').classList.remove('hidden');
+$('templateHeading').textContent='قوالب '+specialtyNames[type];
+renderTemplates(type);
+window.scrollTo({top:0,behavior:'smooth'});
 }
 
-],
+function renderTemplates(type){
+const box=$('templates'); box.innerHTML='';
+templates[type].forEach(template=>{
+const card=document.createElement('div');
+card.className='template-card';
+card.innerHTML=`
+<div class="template-preview ${template.color}">
+<div class="preview-name">YOUR NAME</div>
+<div class="preview-role">Professional</div>
+<div class="preview-bar"></div>
+<div class="preview-title">PROFILE</div>
+<div class="preview-line"></div><div class="preview-line" style="width:75%"></div>
+<div class="preview-title">EXPERIENCE</div>
+<div class="preview-line"></div><div class="preview-line" style="width:82%"></div>
+<div class="preview-title">SKILLS</div><div class="preview-line" style="width:65%"></div>
+</div>
+<h3>${escapeHTML(template.name)}</h3>
+<p>${escapeHTML(template.description)}</p>
+<button type="button" class="chooseTemplate">استخدام هذا القالب</button>`;
+card.querySelector('.chooseTemplate').addEventListener('click',()=>selectTemplate(template));
+box.appendChild(card);
+});
+}
 
-engineering:[
+function selectTemplate(template){
+selectedTemplate=template.id;
+$('templateSection').classList.add('hidden');
+$('formSection').classList.remove('hidden');
+$('selectedTemplate').textContent=specialtyNames[selectedSpecialty]+' — '+template.name;
+window.scrollTo({top:0,behavior:'smooth'});
+}
 
-{
-id:'eng-on
+function findTemplate(){
+for(const type in templates){
+const found=templates[type].find(t=>t.id===selectedTemplate);
+if(found)return found;
+}
+return null;
+}
+
+function splitSkills(text){
+return String(text||'').split(/[,،\n]/).map(x=>x.trim()).filter(Boolean);
+}
+
+function getPhotoData(){
+return window.cvPhotoData || "";
+}
+
+function photoHTML(show=true){
+const src=getPhotoData();
+if(!show || !src) return "";
+return `<div class="cv-photo-wrap"><img class="cv-photo" src="${src}" alt="Profile photo"></div>`;
+}
+
+function basicSections(){
+return `
+<div class="cv-section"><h3>PROFILE</h3><p>${nl(v('summary')||'Professional candidate seeking a new opportunity.')}</p></div>
+<div class="cv-section"><h3>EXPERIENCE</h3><div class="cv-item"><p>${nl(v('experience')||'Add your professional experience here.')}</p></div></div>
+<div class="cv-section"><h3>EDUCATION</h3><div class="cv-item"><p>${nl(v('education')||'Add your education here.')}</p></div></div>
+<div class="cv-section"><h3>SKILLS</h3><div class="cv-skills">${splitSkills(v('skills')||'Add your skills here.').map(s=>`<span class="cv-skill">${escapeHTML(s)}</span>`).join('')}</div></div>
+<div class="cv-section"><h3>LANGUAGES</h3><p>${nl(v('languages')||'Arabic — Native')}</p></div>`;
+}
+
+function sidebar(){
+return `
+<div class="cv-side-title">CONTACT</div>
+<div class="cv-side-text">${nl([v('email'),v('phone')].filter(Boolean).join('\n')||'Add contact details')}</div>
+<div class="cv-side-title">EDUCATION</div>
+<div class="cv-side-text">${nl(v('education')||'Add education')}</div>
+<div class="cv-side-title">SKILLS</div>
+<div class="cv-side-text">${nl(v('skills')||'Add skills')}</div>
+<div class="cv-side-title">LANGUAGES</div>
+<div class="cv-side-text">${nl(v('languages')||'Arabic — Native')}</div>`;
+}
+
+function generateCV(){
+const name=v('name')||'Your Name';
+const role=v('role')||'Professional';
+const contact=[v('email'),v('phone')].filter(Boolean).join(' | ');
+const template=findTemplate();
+const cls=template?template.cvClass:selectedSpecialty;
+let html='';
+
+if(cls==='commerce-blue'){
+html=`<div class="cv-sidebar">${sidebar()}</div><div class="cv-main">${photoHTML(true)}<h1>${escapeHTML(name)}</h1><div class="role">${escapeHTML(role)}</div><div class="contact">${escapeHTML(contact)}</div>${basicSections()}</div>`;
+}
+else if(cls==='commerce-purple'){
+html=`<div class="cv-header">${photoHTML(true)}<h1>${escapeHTML(name)}</h1><div class="role">${escapeHTML(role)}</div><div class="contact">${escapeHTML(contact)}</div></div><div class="cv-content"><div>${basicSections()}</div><aside class="cv-side"><div class="cv-side-title">KEY SKILLS</div><div class="cv-side-text">${nl(v('skills')||'Excel\nAccounting\nERP')}</div><div class="cv-side-title">LANGUAGES</div><div class="cv-side-text">${nl(v('languages')||'Arabic — Native')}</div></aside></div>`;
+}
+else if(cls==='computers-blue'){
+html=`<div class="cv-tech-head">${photoHTML(true)}<h1>${escapeHTML(name)}</h1><div class="role">${escapeHTML(role)}</div><div class="contact">${escapeHTML(contact)}</div></div><div class="cv-tech-grid"><div>${basicSections()}</div><aside class="cv-side"><div class="cv-side-title">TECH STACK</div><div class="cv-skills">${splitSkills(v('skills')).map(s=>`<span class="cv-skill">${escapeHTML(s)}</span>`).join('')||'<span class="cv-side-text">Add skills</span>'}</div><div class="cv-side-title">LANGUAGES</div><div class="cv-side-text">${nl(v('languages')||'Arabic — Native')}</div></aside></div>`;
+}
+else if(cls==='computers-purple'){
+html=`<div class="cv-tech-banner"><div>${photoHTML(true)}<h1>${escapeHTML(name)}</h1><div class="role">${escapeHTML(role)}</div><div class="contact">${escapeHTML(contact)}</div></div><div style="font-size:28px">⌘</div></div><div class="cv-tech-content"><div>${basicSections()}</div><aside class="cv-side"><div class="cv-side-title">TECH SKILLS</div><div class="cv-skills">${splitSkills(v('skills')).map(s=>`<span class="cv-skill">${escapeHTML(s)}</span>`).join('')}</div></aside></div>`;
+}
+else if(cls==='engineering-blue'){
+html=`<div class="cv-sidebar">${sidebar()}<div class="cv-side-title">FIELD</div><div class="cv-side-text">${escapeHTML(role)}</div></div><div class="cv-main">${photoHTML(true)}<h1>${escapeHTML(name)}</h1><div class="role">${escapeHTML(role)}</div><div class="contact">${escapeHTML(contact)}</div>${basicSections()}</div>`;
+}
+else if(cls==='engineering-green'){
+html=`<div class="eng-head">${photoHTML(true)}<h1>${escapeHTML(name)}</h1><div class="role">${escapeHTML(role)}</div><div class="contact">${escapeHTML(contact)}</div></div><div class="eng-grid"><div>${basicSections()}</div><aside class="cv-side"><div class="cv-side-title">TECHNICAL PROFILE</div><div class="cv-side-text">${nl(v('skills')||'Engineering tools\nProject management\nTechnical reporting')}</div><div class="cv-side-title">EDUCATION</div><div class="cv-side-text">${nl(v('education')||'Add education')}</div></aside></div>`;
+}
+else{
+html=`<div class="cv-body">${photoHTML(cls!=='ats')}<h1>${escapeHTML(name)}</h1><div class="role">${escapeHTML(role)}</div><div class="contact">${escapeHTML(contact)}</div>${aiCV?`<div class="cv-section"><h3>PROFILE</h3><p class="cv-ai">${nl(aiCV)}</p></div>`:basicSections()}</div>`;
+}
+
+$('cv').className='cv '+cls;
+$('cv').innerHTML=html;
+$('preview').style.display='block';
+$('preview').scrollIntoView({behavior:'smooth'});
+}
+
+async function improveAI(){
+if(!v('experience')&&!v('summary')){
+showStatus('اكتب على الأقل خبرتك أو نبذة عنك أولًا.','error');return;
+}
+showStatus('✨ جاري تحسين الـCV بالـAI...','loading');
+try{
+const payload={
+name:v('name'),role:v('role'),email:v('email'),phone:v('phone'),
+experience:v('experience'),education:v('education'),skills:v('skills'),
+languages:v('languages'),summary:v('summary')
+};
+const response=await fetch(WORKER_URL,{
+method:'POST',
+headers:{'Content-Type':'application/json'},
+body:JSON.stringify(payload)
+});
+const result=await response.json();
+if(!response.ok||!result.success||!result.cv){
+throw new Error(result.error?JSON.stringify(result.error):'فشل الاتصال بخدمة AI');
+}
+aiCV=String(result.cv).trim();
+showStatus('✅ تم تحسين الـCV بواسطة AI. اضغط «إنشاء الـCV» لرؤية النتيجة.','ok');
+}catch(error){
+console.error(error);
+showStatus('❌ حدث خطأ أثناء الاتصال بالـAI. تأكد من أن الـWorker يعمل ثم حاول مرة أخرى.','error');
+}
+}
+
+function clearForm(){
+document.querySelectorAll('input,textarea').forEach(x=>x.value='');
+aiCV='';$('preview').style.display='none';$('status').style.display='none';
+}
+function showStatus(text,type){
+$('status').style.display='block';$('status').textContent=text;
+$('status').style.background=type==='error'?'#fef2f2':type==='loading'?'#eff6ff':'#f0fdf4';
+$('status').style.color=type==='error'?'#991b1b':type==='loading'?'#1d4ed8':'#166534';
+}
+function nl(x){return escapeHTML(String(x)).replace(/\n/g,'<br>')}
+function escapeHTML(x){return String(x).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+
+document.querySelectorAll('.specialty').forEach(card=>card.addEventListener('click',()=>selectSpecialty(card.dataset.specialty)));
+$('backButton').addEventListener('click',()=>{
+$('templateSection').classList.add('hidden');$('specialtySection').classList.remove('hidden');
+window.scrollTo({top:0,behavior:'smooth'});
+});
+$('changeTemplate').addEventListener('click',()=>{
+$('formSection').classList.add('hidden');$('templateSection').classList.remove('hidden');
+renderTemplates(selectedSpecialty);window.scrollTo({top:0,behavior:'smooth'});
+});
+$('aiButton').addEventListener('click',improveAI);
+$('generateButton').addEventListener('click',generateCV);
+$('clearButton').addEventListener('click',clearForm);
+$('printButton').addEventListener('click',()=>window.print());
+
+$('photo').addEventListener('change',function(){
+const file=this.files&&this.files[0];
+if(!file){return;}
+if(!file.type.startsWith('image/')){showStatus('❌ اختر ملف صورة فقط.','error');this.value='';return;}
+if(file.size>5*1024*1024){showStatus('❌ حجم الصورة يجب ألا يتجاوز 5MB.','error');this.value='';return;}
+const reader=new FileReader();
+reader.onload=function(e){
+window.cvPhotoData=e.target.result;
+$('photoPreview').src=e.target.result;
+$('photoPreview').style.display='block';
+$('photoPlaceholder').style.display='none';
+showStatus('✅ تم اختيار الصورة.','ok');
+};
+reader.readAsDataURL(file);
+});
+
+$('removePhoto').addEventListener('click',function(){
+window.cvPhotoData='';
+$('photo').value='';
+$('photoPreview').src='';
+$('photoPreview').style.display='none';
+$('photoPlaceholder').style.display='flex';
+});
+</script>
+</body>
+</html>
