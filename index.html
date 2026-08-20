@@ -156,23 +156,23 @@ let aiCV='';
 /* نفس Worker القديم بدون تغيير */
 const WORKER_URL='https://bold-cell-b95f.ahmedamerr222.workers.dev/';
 
-const specialtyNames={commerce:'تجارة ومحاسبة',computers:'حاسبات وتكنولوجيا',engineering:'هندسة'};
+const specialtyNames={commerce:'Commerce & Accounting',computers:'Computers & Technology',engineering:'Engineering'};
 
 const templates={
 commerce:[
-{id:'commerce-blue',name:'محاسبة احترافي',description:'تصميم رسمي بعمود جانبي للمحاسبين والماليات.',color:'blue',cvClass:'commerce-blue'},
-{id:'commerce-purple',name:'Finance Modern',description:'تصميم حديث مناسب للوظائف المالية والإدارية.',color:'purple',cvClass:'commerce-purple'},
-{id:'commerce-ats',name:'Professional ATS',description:'تصميم واضح وبسيط مناسب لأنظمة ATS.',color:'blue',cvClass:'ats'}
+{id:'commerce-blue',name:'Accounting Professional',description:'Formal sidebar design for accounting and finance professionals.',color:'blue',cvClass:'commerce-blue'},
+{id:'commerce-purple',name:'Finance Modern',description:'Modern design for finance and administrative roles.',color:'purple',cvClass:'commerce-purple'},
+{id:'commerce-ats',name:'Professional ATS',description:'Clean, simple design optimized for ATS.',color:'blue',cvClass:'ats'}
 ],
 computers:[
-{id:'computers-blue',name:'Developer Professional',description:'تصميم Tech داكن للمبرمجين وIT والذكاء الاصطناعي.',color:'blue',cvClass:'computers-blue'},
-{id:'computers-purple',name:'Software Modern',description:'تصميم عصري للبرمجة والتكنولوجيا والمشاريع.',color:'purple',cvClass:'computers-purple'},
-{id:'computers-ats',name:'Professional ATS',description:'قالب واضح للتقديم على شركات التكنولوجيا.',color:'purple',cvClass:'ats'}
+{id:'computers-blue',name:'Developer Professional',description:'Dark tech design for developers, IT, AI, and data roles.',color:'blue',cvClass:'computers-blue'},
+{id:'computers-purple',name:'Software Modern',description:'Modern design for software, technology, and project roles.',color:'purple',cvClass:'computers-purple'},
+{id:'computers-ats',name:'Professional ATS',description:'Clean ATS-ready template for technology applications.',color:'purple',cvClass:'ats'}
 ],
 engineering:[
-{id:'engineering-blue',name:'Engineering Professional',description:'تصميم هندسي بعمود جانبي ومعلومات فنية.',color:'green',cvClass:'engineering-blue'},
-{id:'engineering-green',name:'Engineering Modern',description:'تصميم حديث للمشاريع والخبرات الهندسية.',color:'green',cvClass:'engineering-green'},
-{id:'engineering-ats',name:'Professional ATS',description:'قالب بسيط مناسب للتقديم على الشركات.',color:'green',cvClass:'ats'}
+{id:'engineering-blue',name:'Engineering Professional',description:'Engineering design with a sidebar for technical information.',color:'green',cvClass:'engineering-blue'},
+{id:'engineering-green',name:'Engineering Modern',description:'Modern design for engineering projects and experience.',color:'green',cvClass:'engineering-green'},
+{id:'engineering-ats',name:'Professional ATS',description:'Simple ATS-ready template for professional applications.',color:'green',cvClass:'ats'}
 ]
 };
 
@@ -239,25 +239,29 @@ if(!show || !src) return "";
 return `<div class="cv-photo-wrap"><img class="cv-photo" src="${src}" alt="Profile photo"></div>`;
 }
 
+function section(title,content){
+  const text=String(content||'').trim();
+  return text ? `<div class="cv-section"><h3>${title}</h3><p>${markdownToHTML(text)}</p></div>` : '';
+}
 function basicSections(){
-return `
-<div class="cv-section"><h3>PROFILE</h3><p>${nl(v('summary')||'Professional candidate seeking a new opportunity.')}</p></div>
-<div class="cv-section"><h3>EXPERIENCE</h3><div class="cv-item"><p>${nl(v('experience')||'Add your professional experience here.')}</p></div></div>
-<div class="cv-section"><h3>EDUCATION</h3><div class="cv-item"><p>${nl(v('education')||'Add your education here.')}</p></div></div>
-<div class="cv-section"><h3>SKILLS</h3><div class="cv-skills">${splitSkills(v('skills')||'Add your skills here.').map(s=>`<span class="cv-skill">${escapeHTML(s)}</span>`).join('')}</div></div>
-<div class="cv-section"><h3>LANGUAGES</h3><p>${nl(v('languages')||'Arabic — Native')}</p></div>`;
+  const skills=splitSkills(v('skills'));
+  return [
+    section('PROFESSIONAL SUMMARY',v('summary')),
+    section('WORK EXPERIENCE',v('experience')),
+    section('EDUCATION',v('education')),
+    skills.length ? `<div class="cv-section"><h3>SKILLS</h3><div class="cv-skills">${skills.map(s=>`<span class="cv-skill">${escapeHTML(s)}</span>`).join('')}</div></div>` : '',
+    section('LANGUAGES',v('languages'))
+  ].join('');
 }
 
 function sidebar(){
-return `
-<div class="cv-side-title">CONTACT</div>
-<div class="cv-side-text">${nl([v('email'),v('phone')].filter(Boolean).join('\n')||'Add contact details')}</div>
-<div class="cv-side-title">EDUCATION</div>
-<div class="cv-side-text">${nl(v('education')||'Add education')}</div>
-<div class="cv-side-title">SKILLS</div>
-<div class="cv-side-text">${nl(v('skills')||'Add skills')}</div>
-<div class="cv-side-title">LANGUAGES</div>
-<div class="cv-side-text">${nl(v('languages')||'Arabic — Native')}</div>`;
+  const contact=[v('email'),v('phone')].filter(Boolean).join('\n');
+  return [
+    contact ? `<div class="cv-side-title">CONTACT</div><div class="cv-side-text">${markdownToHTML(contact)}</div>` : '',
+    v('education') ? `<div class="cv-side-title">EDUCATION</div><div class="cv-side-text">${markdownToHTML(v('education'))}</div>` : '',
+    v('skills') ? `<div class="cv-side-title">SKILLS</div><div class="cv-side-text">${markdownToHTML(v('skills'))}</div>` : '',
+    v('languages') ? `<div class="cv-side-title">LANGUAGES</div><div class="cv-side-text">${markdownToHTML(v('languages'))}</div>` : ''
+  ].join('');
 }
 
 function generateCV(){
@@ -272,10 +276,10 @@ if(cls==='commerce-blue'){
 html=`<div class="cv-sidebar">${sidebar()}</div><div class="cv-main">${photoHTML(true)}<h1>${escapeHTML(name)}</h1><div class="role">${escapeHTML(role)}</div><div class="contact">${escapeHTML(contact)}</div>${basicSections()}</div>`;
 }
 else if(cls==='commerce-purple'){
-html=`<div class="cv-header">${photoHTML(true)}<h1>${escapeHTML(name)}</h1><div class="role">${escapeHTML(role)}</div><div class="contact">${escapeHTML(contact)}</div></div><div class="cv-content"><div>${basicSections()}</div><aside class="cv-side"><div class="cv-side-title">KEY SKILLS</div><div class="cv-side-text">${nl(v('skills')||'Excel\nAccounting\nERP')}</div><div class="cv-side-title">LANGUAGES</div><div class="cv-side-text">${nl(v('languages')||'Arabic — Native')}</div></aside></div>`;
+html=`<div class="cv-header">${photoHTML(true)}<h1>${escapeHTML(name)}</h1><div class="role">${escapeHTML(role)}</div><div class="contact">${escapeHTML(contact)}</div></div><div class="cv-content"><div>${basicSections()}</div><aside class="cv-side"><div class="cv-side-title">KEY SKILLS</div><div class="cv-side-text">${markdownToHTML(v('skills'))}</div><div class="cv-side-title">LANGUAGES</div><div class="cv-side-text">${markdownToHTML(v('languages'))}</div></aside></div>`;
 }
 else if(cls==='computers-blue'){
-html=`<div class="cv-tech-head">${photoHTML(true)}<h1>${escapeHTML(name)}</h1><div class="role">${escapeHTML(role)}</div><div class="contact">${escapeHTML(contact)}</div></div><div class="cv-tech-grid"><div>${basicSections()}</div><aside class="cv-side"><div class="cv-side-title">TECH STACK</div><div class="cv-skills">${splitSkills(v('skills')).map(s=>`<span class="cv-skill">${escapeHTML(s)}</span>`).join('')||'<span class="cv-side-text">Add skills</span>'}</div><div class="cv-side-title">LANGUAGES</div><div class="cv-side-text">${nl(v('languages')||'Arabic — Native')}</div></aside></div>`;
+html=`<div class="cv-tech-head">${photoHTML(true)}<h1>${escapeHTML(name)}</h1><div class="role">${escapeHTML(role)}</div><div class="contact">${escapeHTML(contact)}</div></div><div class="cv-tech-grid"><div>${basicSections()}</div><aside class="cv-side"><div class="cv-side-title">TECH STACK</div><div class="cv-skills">${splitSkills(v('skills')).map(s=>`<span class="cv-skill">${escapeHTML(s)}</span>`).join('')||'<span class="cv-side-text">Add skills</span>'}</div><div class="cv-side-title">LANGUAGES</div><div class="cv-side-text">${markdownToHTML(v('languages'))}</div></aside></div>`;
 }
 else if(cls==='computers-purple'){
 html=`<div class="cv-tech-banner"><div>${photoHTML(true)}<h1>${escapeHTML(name)}</h1><div class="role">${escapeHTML(role)}</div><div class="contact">${escapeHTML(contact)}</div></div><div style="font-size:28px">⌘</div></div><div class="cv-tech-content"><div>${basicSections()}</div><aside class="cv-side"><div class="cv-side-title">TECH SKILLS</div><div class="cv-skills">${splitSkills(v('skills')).map(s=>`<span class="cv-skill">${escapeHTML(s)}</span>`).join('')}</div></aside></div>`;
@@ -287,7 +291,7 @@ else if(cls==='engineering-green'){
 html=`<div class="eng-head">${photoHTML(true)}<h1>${escapeHTML(name)}</h1><div class="role">${escapeHTML(role)}</div><div class="contact">${escapeHTML(contact)}</div></div><div class="eng-grid"><div>${basicSections()}</div><aside class="cv-side"><div class="cv-side-title">TECHNICAL PROFILE</div><div class="cv-side-text">${nl(v('skills')||'Engineering tools\nProject management\nTechnical reporting')}</div><div class="cv-side-title">EDUCATION</div><div class="cv-side-text">${nl(v('education')||'Add education')}</div></aside></div>`;
 }
 else{
-html=`<div class="cv-body">${photoHTML(cls!=='ats')}<h1>${escapeHTML(name)}</h1><div class="role">${escapeHTML(role)}</div><div class="contact">${escapeHTML(contact)}</div>${aiCV?`<div class="cv-section"><h3>PROFILE</h3><p class="cv-ai">${nl(aiCV)}</p></div>`:basicSections()}</div>`;
+html=`<div class="cv-body">${photoHTML(true)}<h1>${escapeHTML(name)}</h1><div class="role">${escapeHTML(role)}</div><div class="contact">${escapeHTML(contact)}</div>${aiCV?`<div class="cv-section"><h3>PROFILE</h3><p class="cv-ai">${markdownToHTML(aiCV)}</p></div>`:basicSections()}</div>`;
 }
 
 $('cv').className='cv '+cls;
@@ -333,7 +337,21 @@ $('status').style.display='block';$('status').textContent=text;
 $('status').style.background=type==='error'?'#fef2f2':type==='loading'?'#eff6ff':'#f0fdf4';
 $('status').style.color=type==='error'?'#991b1b':type==='loading'?'#1d4ed8':'#166534';
 }
-function nl(x){return escapeHTML(String(x)).replace(/\n/g,'<br>')}
+function markdownToHTML(input){
+  let s=String(input||'').replace(/\r\n?/g,'\n').trim();
+  if(!s)return '';
+  s=s.replace(/^\s*([-*_])(?:\s*\1){2,}\s*$/gm,'');
+  s=s.replace(/^\s*#{1,6}\s*/gm,'');
+  s=escapeHTML(s);
+  s=s.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
+  s=s.replace(/__(.+?)__/g,'<strong>$1</strong>');
+  s=s.replace(/`([^`\n]+)`/g,'<code>$1</code>');
+  s=s.replace(/^\s*[-*+]\s+/gm,'• ');
+  s=s.replace(/^\s*---+\s*$/gm,'');
+  s=s.replace(/\n{3,}/g,'\n\n');
+  return s.replace(/\n/g,'<br>');
+}
+function nl(x){return markdownToHTML(x)}
 function escapeHTML(x){return String(x).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
 
 document.querySelectorAll('.specialty').forEach(card=>card.addEventListener('click',()=>selectSpecialty(card.dataset.specialty)));
